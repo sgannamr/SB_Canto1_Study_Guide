@@ -494,6 +494,31 @@
 // "Go Deeper" panel under a given section.
 var sapContent = {};
 
+// Architecture-of-Canto-1 guide content, used by openArchitecture().
+// Brought in from the working version so the Architecture page renders.
+const archContent = `
+  <div style="background:var(--bg-darker);border-left:4px solid var(--maroon);padding:20px 24px;margin-bottom:28px;font-size:19px;line-height:1.85;color:var(--text-mid);font-style:italic;">
+    Canto 1 appears at first to jump from one topic to something entirely unrelated &mdash; from cosmic philosophy to a battlefield, from a wandering sage to a dying king. But nothing is accidental. Every chapter is a stone placed precisely where it must be. Once you see the architecture, the whole of Canto 1 reveals itself as one of the most elegantly constructed narratives in all of literature.
+  </div>
+
+  <div class="section-block">
+    <div class="section-header" style="cursor:default;">
+      <div class="section-num">Section 1</div>
+      <div class="section-name">The Overall Design &mdash; Two Preludes</div>
+      <div class="section-texts">Chapters 1 through 19</div>
+    </div>
+    <div class="section-body" style="display:block;">
+      <p>The Bhagavatam describes Canto 1 as having two distinct movements &mdash; two Preludes. Each is organized around questions and answers. Together they build the foundation upon which all twelve Cantos rest.</p>
+      <p class="sub-heading">Prelude Part A &mdash; Chapters 1 to 3</p>
+      <p>Chapter 1 establishes six questions from the sages. Chapters 2 and 3 answer them systematically. What is the highest good? &mdash; Bhakti. What is the essence of all scriptures? &mdash; Devotional service. What are the lila avatars? &mdash; All 22 incarnations in Chapter 3. Where did dharma go after Krsna left? &mdash; The Bhagavatam itself is where dharma took shelter. Chapters 1 to 3 are one complete unit. Question &mdash; answer. Question &mdash; answer. Clean, complete and self-contained.</p>
+      <p class="sub-heading">Prelude Part B &mdash; Chapters 4 to 19</p>
+      <p>In Chapter 4 the sages ask four entirely new questions. These drive the entire rest of Canto 1 all the way to Chapter 19. <strong>Question 1</strong> &mdash; Why was the Bhagavatam compiled? This takes six chapters to answer &mdash; Chapters 4 through the opening of Chapter 7. <strong>Question 2</strong> &mdash; What are the birth and activities of Pariksit? This takes Chapters 7 through 17 to answer. <strong>Questions 3 and 4</strong> &mdash; Why did Pariksit sit on the Ganges, and how did he meet Sukadeva? &mdash; Chapters 18 and 19. And with Sukadeva's arrival and Pariksit's question at the very end of Chapter 19 &mdash; <strong>the Bhagavatam proper begins. Canto 2 starts.</strong></p>
+      <p class="sub-heading">The Deeper Thread</p>
+      <p>What looks like a shift from philosophy to narrative is the Bhagavatam moving from <em>why</em> to <em>how</em>. First it tells you why bhakti is the answer. Then it shows you bhakti in action &mdash; in Kunti's prayers, in Draupadi's mercy, in Arjuna's surrender, in Bhishma's meditation at the moment of death. The philosophy becomes embodied in the story. There is also a zoom structure &mdash; from the most vast and cosmic scale down to one frightened woman running toward a chariot, down to one king sitting in grief on the Ganges bank. <em>The Bhagavatam keeps zooming in. From the cosmic to the personal. From the universal to the intimate. Because that is the direction of bhakti &mdash; always moving toward the specific and beloved.</em></p>
+    </div>
+  </div>
+`;
+
 function mkVerses(canto, chap, from, to) {
   var arr = [];
   for (var n = from; n <= to; n++) arr.push({ v: canto + '.' + chap + '.' + n });
@@ -503,11 +528,111 @@ function mkVerses(canto, chap, from, to) {
 var verseData = {
   "1.1.1": {
     keyPoints: [
-      "Ma\u1e45gal\u0101cara\u1e47a \u2014 we bow before beginning.",
-      "<em>janm\u0101dy asya yata\u1e25</em> \u2014 the Absolute Truth is the source of everything.",
-      "K\u1e5b\u1e63\u1e47a is the cause of all causes \u2014 self-sufficient and fully conscious."
+      "Definition of Absolute Truth (AT): The substance from which nothing is different.",
+      "AT is a person, the Divine son of Vasudeva & Devaki, known as Krishna, the Supreme Personality of Godhead (SPoG).",
+      "Everything else, including Brahmajyoti, emanates from Him.",
+      "Krishna is the cause of creation, maintenance, and destruction of this universe.",
+      "The Lord is fully cognizant, independent, and no other living entity is equal to or greater than Him.",
+      "The Supreme intelligence behind all creations is Absolute Godhead, Sri Krishna, not Brahmaji or any other living entity.",
+      "The relationship between Absolute Truth and relative truth is explained; the cosmic creation is a manifestation of external potency, acting like a shadow of the true reality in the spiritual world."
     ],
-    purportSummary: "\u015Br\u012Bla Prabhup\u0101da establishes that the Bh\u0101gavatam begins by offering obeisances to the Supreme Truth, V\u0101sudeva. The Absolute is the origin of all emanations, directly and indirectly cognizant of everything, and independent of any other cause.",
+    purportSummary: "Srila Vyasadeva begins by offering obeisances and defining the Absolute Truth. The Absolute Truth is established as the primeval cause of all causes of creation, sustenance, and destruction of universes. The Lord is both the material and efficient cause, acting fully independent and fully cognizant. The pure spiritual reality is contrasted with the temporary, illusory material manifestation, emphasizing that the true reality is in the spiritual world, free from illusion. Vyasadeva purposely invokes the Gayatri mantra to indicate that this literature is for spiritually advanced souls aiming for transcendental realization.",
+    classPoints: ""
+  },
+  "1.1.2": {
+    keyPoints: [
+      "Real religion is distinguished from pretentious/cheating religion (Kaitava Dharma) which is propelled by competition and sense gratification.",
+      "Only pure-hearted, non-envious devotees can understand Srimad-Bhagavatam.",
+      "Srimad-Bhagavatam aims at the 'substance' or 'root' of all categories, promulgating the 'simultaneous one and different' philosophy.",
+      "Proper understanding of one's position as a transcendental servant leads to freedom from the threefold miseries.",
+      "Vyasadeva recommends Srimad-Bhagavatam above all other Vedic literatures.",
+      "The ultimate result of studying Srimad-Bhagavatam is that the Supreme Lord is fixed in the heart immediately."
+    ],
+    purportSummary: "Srimad-Bhagavatam rejects all materially motivated religious activities (dharma, artha, kama, moksa) and propounds the highest truth. It is transcendental to karma-kanda, jnana-kanda, and upasana-kanda, which are full of competition driven by envy. By submissively hearing Srimad-Bhagavatam, intelligent persons can realize the Supreme Personality of Godhead directly and be freed from material miseries.",
+    classPoints: ""
+  },
+  "1.1.3": {
+    keyPoints: [
+      "Srimad-Bhagavatam is a mature, ripened fruit of the Vedic desire tree.",
+      "Sukadeva Gosvami's recitation makes it even more sweet and easily swallowed.",
+      "The Supreme Personality of Godhead is the fountainhead of all rasas (spiritual tastes).",
+      "Expert and thoughtful men relish Srimad-Bhagavatam, experiencing no satiation."
+    ],
+    purportSummary: "This verse invites humanity to taste the sweetness of Srimad-Bhagavatam. It demands patient and submissive hearing with great respect. The text establishes that the Supreme Absolute Truth is not impersonal, but the reservoir of all spiritual tastes (rasas). Sincere candidates should approach it in the footsteps of Sukadeva Gosvami to attain full pleasure of the heart.",
+    classPoints: ""
+  },
+  "1.1.4": {
+    keyPoints: [
+      "The scene is set at Naimisaranya, the hub of the universe and place of Visnu, where sacrifices curtail demoniac strength.",
+      "Great sages, headed by Saunaka, assembled to perform a thousand-year sacrifice for the spiritual well-being of people.",
+      "Modern society is compared to detached branches which gradually dry up."
+    ],
+    purportSummary: "The devotees of Lord Visnu offer all kinds of sacrifices for His pleasure, always anxious to do good for the general public. For the age of Kali, the prescribed sacrifice for real benefit, peace, and prosperity is congregational chanting.",
+    classPoints: ""
+  },
+  "1.1.5": {
+    keyPoints: [
+      "The sages offered oblations in the morning and respectfully inquired from Suta Gosvami.",
+      "Morning hours are important for performing spiritual services.",
+      "A representative of Vyasa must perfectly present Vyasadeva's viewpoint, restrain the senses, and not deliver lectures capriciously."
+    ],
+    purportSummary: "One must learn transcendental subjects by submissive aural reception from the right sources. Listeners may put questions to the speaker to elicit clear meaning, but this must be done with great regard and not in a challenging spirit.",
+    classPoints: ""
+  },
+  "1.1.6": {
+    keyPoints: [
+      "Suta Gosvami is qualified because he has studied and explained the Puranas, dharma-sastras, and histories.",
+      "A speaker of Srimad-Bhagavatam must be properly learned and free from vices like illicit sex, animal slaughter, intoxication, and gambling."
+    ],
+    purportSummary: "No one should sit on the Vyasasana who is not spotless in character and freed from the mentioned vices. Ramayana, Mahabharata, Puranas, and revealed scriptures are all considered Vedas.",
+    classPoints: ""
+  },
+  "1.1.7": {
+    keyPoints: [
+      "Suta Gosvami knows all matters in truth by the mercy of the gurus.",
+      "He is familiar with what Vyasadeva and other sages who know Brahman understand."
+    ],
+    purportSummary: "Srimad-Bhagavatam is the natural commentary on the Vedanta-sutra by the same author, Srila Vyasadeva. One can sit on the Vyasasana only after being conversant in all systems of philosophy to present the theistic views of Srimad-Bhagavatam.",
+    classPoints: ""
+  },
+  "1.1.8": {
+    keyPoints: [
+      "Suta Gosvami is submissive, and gurus speak secrets to an affectionate disciple."
+    ],
+    purportSummary: "The secret of success in spiritual life is satisfying the spiritual master and getting his blessings. A disciple must be highly obedient and submissive to the bona fide spiritual master.",
+    classPoints: ""
+  },
+  "1.1.9": {
+    keyPoints: [
+      "The sages ask Suta Gosvami to explain the absolute and ultimate good for the people (Question 1).",
+      "The acaryas give directions for spiritual well-being, which automatically brings material well-being."
+    ],
+    purportSummary: "Spiritual personalities are constantly absorbed in thoughts of the well-being of the general public. Foreseeing the faults of the iron age of Kali, the sages requested the essence of the scriptures to determine the absolute good for mankind.",
+    classPoints: ""
+  },
+  "1.1.10": {
+    keyPoints: [
+      "In Kali-yuga, people are generally short-lived, lazy, unintelligent, unfortunate, and afflicted by various problems.",
+      "The short life span is due to irregular habits, overeating, over-sense gratification, and artificial standards of living.",
+      "Bad education creates spiritual laziness, diverting people to sense gratification and false religions."
+    ],
+    purportSummary: "The devotees of the Lord are anxious for the spiritual improvement of the public. Seeing the condemned, quarrelsome state of Kali-yuga—characterized by distorted values, lack of proper ashramas, and concocted faiths—the sages seek an easy remedy from Suta Gosvami.",
+    classPoints: ""
+  },
+  "1.1.11": {
+    keyPoints: [
+      "The sages request Suta Gosvami to extract the essence of all scriptures (Question 2).",
+      "There are innumerable scriptures with various methods, and people in Kali-yuga cannot follow them all."
+    ],
+    purportSummary: "The soul is never satisfied by material planning; scriptures are meant for the satisfaction of the soul. Because spiritual emancipation for the common man is very difficult in this age, the sages ask for the essential practices to satisfy the intelligence/soul.",
+    classPoints: ""
+  },
+  "1.1.12": {
+    keyPoints: [
+      "The sages ask why the Lord appeared as Krishna, the son of Vasudeva and Devaki (Question 3).",
+      "The Supreme Lord is the protector of the devotees (Satvatas)."
+    ],
+    purportSummary: "Bhagavan possesses six opulences and is the protector of devotees. The sages' question indicates their anxiety to know about the Absolute Truth. Vasudeva symbolizes the transcendental position where the appearance of the Supreme Lord takes place.",
     classPoints: ""
   }
 };
@@ -620,7 +745,7 @@ const canto1Chapters = [
     vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/",
     verseClasses: [
       { label: "Class 1", date: "27 June 2026", range: "SB 1.1.1\u20131.1.12", lectureUrl: "", verses: mkVerses(1, 1, 1, 12) },
-      { label: "Class 2", date: "11 July 2026",  range: "SB 1.1.13\u20131.1.23", lectureUrl: "", verses: mkVerses(1, 1, 13, 23) }
+      { label: "Class 2", date: "4 July 2026",  range: "SB 1.1.13\u20131.1.23", lectureUrl: "", verses: mkVerses(1, 1, 13, 23) }
     ],
     sections: [
       { title: "The Opening Prayer", texts: "Text 1", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/1/", gist: "The Bhagavatam opens by bowing to Krsna before anything else is said — Vyasadeva's invocation establishes that this entire work is itself an act of worship, not merely a text to be studied.", content: `
