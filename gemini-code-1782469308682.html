@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srimad Bhagavatam — Canto 1</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600&family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #f8f2e4;
+    --bg-darker:    #f3ebd9;
+    --bg-darkest:   #36312a;
+    --maroon:       #845f17;
+    --maroon-dark:  #5c420f;
+    --text:         #2b2018;
+    --text-mid:     #4e3c2c;
+    --text-muted:   #8c7458;
+    --gold:         #c2872f;
+    --gold-dark:    #845f17;
+    --border:       #e5d6b4;
+    --border-light: #efe3c9;
+    --sit-bg:       #f3ebd9;
+    --sit-border:   #845f17;
+  }
+
+  /* ── NIGHT READING MODE ───────────────────────── */
+  html.night {
+    --bg:           #262624;
+    --bg-darker:    #30302e;
+    --bg-darkest:   #1f1e1d;
+    --maroon:       #d97757;
+    --maroon-dark:  #c2674a;
+    --text:         #ece9e0;
+    --text-mid:     #d6d3ca;
+    --text-muted:   #a09c92;
+    --gold:         #d97757;
+    --gold-dark:    #c2674a;
+    --border:       #3d3c39;
+    --border-light: #30302e;
+    --sit-bg:       #30302e;
+    --sit-border:   #d97757;
+  }
+  html.night, html.night body { background: #262624; }
+  html.night .cantos-hero { background: #30302e; border-bottom-color: #3d3c39; }
+  html.night .cantos-hero-om { color: #d97757; }
+  html.night .cantos-hero-title { color: #f5f4ee; }
+  html.night .cantos-hero-subtitle { color: #d97757; }
+  html.night .cantos-hero-mantra { color: #c2674a; }
+  html.night .cantos-hero [onclick] { color: #ece9e0 !important; border-color: #ece9e0 !important; }
+  html.night .translation-header:hover { background: rgba(217,119,87,0.08); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #f8f2e4; }
+
+  body {
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    line-height: 1.9;
+  }
+
+  .screen { display: none; }
+  .screen.active { display: block; background: var(--bg); min-height: 100vh; }
+
+  .site-header {
+    background: var(--bg-darkest);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .header-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .header-om { font-size: 20px; font-weight: 600; color: var(--maroon); line-height: 1; font-family: "Cinzel", serif; letter-spacing: 0.1em; }
+  .header-titles { flex: 1; }
+
+  .header-main {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(16px, 3.5vw, 22px);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+
+  .header-sub {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    color: var(--text-mid);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .back-to-cantos {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    text-decoration: none;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    background: var(--bg-darker);
+    margin-bottom: 16px;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .back-to-cantos:hover { background: var(--bg-darkest); }
+
+  .header-right {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: right;
+    line-height: 1.5;
+    font-family: 'EB Garamond', serif;
+  }
+
+  .header-saved {
+    flex-shrink: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    background: var(--bg-darker);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .header-saved:hover { background: var(--bg-darkest); color: var(--maroon); border-color: var(--maroon); }
+
+  .header-night {
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--gold-dark);
+    background: var(--bg-darker);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .header-night:hover { background: var(--bg-darkest); color: var(--maroon); border-color: var(--maroon); }
+
+  #saved-body { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
+  .saved-intro { text-align: center; margin-bottom: 28px; }
+  .saved-count { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 6px; }
+  .saved-heading { font-family: 'Cinzel', serif; font-size: clamp(24px, 5vw, 34px); font-weight: 600; color: var(--text); line-height: 1.25; }
+  .saved-canto-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-dark); margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border-light); }
+  .saved-item { display: flex; align-items: center; gap: 16px; background: var(--bg-darker); border: 1px solid var(--border); border-left: 3px solid var(--maroon); padding: 16px 20px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+  .saved-item:hover { background: var(--bg-darkest); }
+  .saved-item-ref { flex-shrink: 0; font-family: 'Cinzel', serif; font-size: 13px; color: var(--maroon); font-weight: 600; min-width: 56px; }
+  .saved-item-text { flex: 1; min-width: 0; }
+  .saved-item-section { font-family: 'EB Garamond', serif; font-size: 19px; color: var(--text); font-weight: 500; line-height: 1.3; }
+  .saved-item-chapter { font-family: 'EB Garamond', serif; font-size: 14px; font-style: italic; color: var(--text-muted); margin-top: 2px; }
+  .saved-item-remove { flex-shrink: 0; background: none; border: none; color: var(--maroon); font-size: 22px; cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.15s, transform 0.1s; }
+  .saved-item-remove:hover { opacity: 1; }
+  .saved-item-remove:active { transform: scale(1.2); }
+  .saved-empty { text-align: center; padding: 50px 20px; font-family: 'EB Garamond', serif; font-style: italic; font-size: 20px; color: var(--text-muted); line-height: 1.7; }
+  .saved-empty .saved-empty-hint { font-size: 16px; margin-top: 10px; }
+
+  .breadcrumb { background: var(--bg-darker); border-bottom: 1px solid var(--border); padding: 7px 20px; }
+  .breadcrumb-inner { max-width: 780px; margin: 0 auto; font-size: 14px; color: var(--text-muted); display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-family: 'EB Garamond', serif; }
+  .breadcrumb-inner > span { white-space: nowrap; }
+  .bc-link { color: var(--maroon); cursor: pointer; font-weight: 500; }
+  .bc-link:hover { text-decoration: underline; }
+  .bc-back { cursor: pointer; color: var(--gold-dark); font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.15s; }
+  .bc-back:hover { color: var(--maroon); }
+  .bc-sep { color: var(--border); }
+
+  .chapter-nav { max-width: 780px; margin: 30px auto 0; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .chnav { display: flex; flex-direction: column; gap: 5px; text-align: left; background: var(--bg-darker); border: 1px solid var(--border); padding: 16px 20px; cursor: pointer; font-family: inherit; color: var(--text); transition: background 0.15s, border-color 0.15s; }
+  .chnav:hover { background: var(--bg-darkest); border-color: var(--maroon); }
+  .chnav.next { text-align: right; align-items: flex-end; }
+  .chnav-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); }
+  .chnav-title { font-family: 'EB Garamond', serif; font-size: 18px; color: var(--maroon); font-weight: 500; line-height: 1.3; }
+
+  .section-continue { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border-light); }
+  .sec-next { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; cursor: pointer; font-family: inherit; color: var(--text); background: var(--bg-darker); border: 1px solid var(--border); padding: 15px 20px; transition: background 0.15s, border-color 0.15s; }
+  .sec-next:hover { background: var(--bg-darkest); border-color: var(--maroon); }
+  .sec-next-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); }
+  .sec-next-title { font-family: 'EB Garamond', serif; font-size: 18px; color: var(--maroon); font-weight: 500; line-height: 1.3; }
+  .sec-next.end { background: var(--maroon); border-color: var(--maroon-dark); }
+  .sec-next.end:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
+  .sec-next.end .sec-next-label { color: var(--bg-darker); }
+  .sec-next.end .sec-next-title { color: #fff; }
+  @media (max-width: 480px) { .chapter-nav { grid-template-columns: 1fr; margin-top: 22px; } .chnav.next { text-align: left; align-items: flex-start; } }
+
+  #home-body { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
+  .ornament { text-align: center; font-size: 26px; color: var(--gold); margin: 8px 0 20px; line-height: 1; }
+  .canto-title-block { text-align: center; padding-bottom: 8px; margin-bottom: 8px; }
+  .canto-label { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold-dark); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; }
+  .canto-name { font-family: 'Cinzel', serif; font-size: clamp(24px, 5vw, 36px); font-weight: 600; color: var(--text); line-height: 1.25; }
+  .canto-subtitle { font-family: 'EB Garamond', serif; font-size: 17px; color: var(--text-mid); font-style: italic; margin-top: 6px; }
+  .hr-ornament { border: none; border-top: 1px solid var(--border); margin: 0 0 28px; }
+  .chapter-list { display: flex; flex-direction: column; gap: 3px; }
+  .chapter-item { display: flex; align-items: stretch; border: 1px solid var(--border-light); background: var(--bg-darker); transition: background 0.15s, border-color 0.15s; }
+  .chapter-item.available { cursor: pointer; }
+  .chapter-item.available:hover { background: var(--bg-darkest); border-color: var(--border); }
+  .chapter-num-col { background: var(--bg-darkest); border-right: 1px solid var(--border-light); padding: 12px 14px; min-width: 52px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 13px; color: var(--text-muted); transition: background 0.15s, color 0.15s; flex-shrink: 0; }
+  .chapter-item.available:hover .chapter-num-col { background: var(--maroon); color: var(--bg); border-right-color: var(--maroon); }
+  .chapter-body { padding: 12px 16px; flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .chapter-title-text { font-size: 20px; color: var(--maroon); line-height: 1.4; font-family: 'EB Garamond', serif; font-weight: 500; }
+  .chapter-item.available:hover .chapter-title-text { color: #f6ebd2; }
+  .chapter-item.available:hover .chapter-meta { color: #e2cca2; }
+  .chapter-meta { font-size: 13px; color: var(--text-muted); margin-top: 2px; font-style: italic; }
+  .chapter-arrow { color: var(--maroon); font-size: 22px; opacity: 0; transition: opacity 0.15s, transform 0.15s; flex-shrink: 0; }
+  .chapter-item.available:hover .chapter-arrow { opacity: 1; transform: translateX(3px); }
+  .chapter-item.coming-soon { opacity: 0.5; }
+  .chapter-item.architecture { background: var(--bg-darkest); border: 1px solid var(--border); cursor: pointer; }
+  .chapter-item.architecture:hover { background: var(--maroon); border-color: var(--maroon-dark); }
+  .chapter-item.architecture .chapter-num-col { background: var(--maroon); color: var(--bg); border-right-color: var(--maroon-dark); font-size: 10px; letter-spacing: 0.05em; }
+  .chapter-item.architecture:hover .chapter-num-col { background: var(--maroon-dark); }
+  .chapter-item.architecture .chapter-title-text { color: #f6ebd2; font-size: 18px; }
+  .chapter-item.architecture:hover .chapter-title-text { color: var(--bg); }
+  .chapter-item.architecture .chapter-meta { color: #e2cca2; }
+  .chapter-item.architecture:hover .chapter-meta { color: var(--bg-darker); }
+  .chapter-item.architecture:hover .chapter-arrow { opacity: 1; color: var(--bg); transform: translateX(3px); }
+  .chapter-divider { font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold-dark); letter-spacing: 0.18em; text-transform: uppercase; padding: 14px 4px 8px; border-bottom: 1px solid var(--border-light); margin-bottom: 4px; }
+
+  #chapter-body { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
+  .chapter-title-block { text-align: center; margin-bottom: 8px; padding-bottom: 8px; }
+  .chapter-sb-ref { font-family: 'Cinzel', serif; font-size: 10px; color: var(--text-muted); letter-spacing: 0.16em; text-transform: uppercase; margin-top: 4px; opacity: 0.7; }
+  .vedabase-link { display: none; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--maroon); text-decoration: none; border-bottom: 1px solid var(--maroon); padding-bottom: 3px; margin-top: 10px; opacity: 1; transition: color 0.2s, border-color 0.2s; }
+  .vedabase-link:hover { color: var(--maroon-dark); border-color: var(--maroon-dark); }
+  .chapter-num-label { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold-dark); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; }
+  .chapter-main-title { font-family: 'Cinzel', serif; font-size: clamp(18px, 4vw, 28px); font-weight: 600; color: var(--text); line-height: 1.3; }
+  .chapter-ornament { text-align: center; font-size: 22px; color: var(--gold); margin: 10px 0 28px; }
+
+  .section-block { border: 1px solid var(--border-light); margin-bottom: 5px; background: var(--bg-darker); }
+  .section-block.open { border-color: var(--border); box-shadow: 0 2px 8px rgba(100,50,0,0.12); }
+  .section-header { padding: 14px 18px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none; border-left: 3px solid transparent; transition: background 0.15s, border-left-color 0.15s; background: var(--bg-darker); }
+  .section-header:hover { background: var(--bg-darkest); border-left-color: var(--maroon); }
+  .section-block.open .section-header { background: var(--bg-darkest); border-left-color: var(--maroon); border-bottom: 1px solid var(--border-light); }
+  .section-header-left { flex: 1; min-width: 0; }
+  .section-num { font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold-dark); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 3px; display: flex; align-items: center; gap: 8px; }
+  .sap-indicator { font-family: 'EB Garamond', serif; font-size: 12px; font-style: italic; color: var(--gold); letter-spacing: 0.04em; }
+  .section-name { font-size: 20px; font-weight: 700; color: var(--maroon); line-height: 1.3; font-family: 'EB Garamond', serif; }
+  .section-texts { font-size: 13px; color: var(--text-muted); font-style: italic; margin-top: 2px; font-family: 'EB Garamond', serif; }
+  .section-chevron { color: var(--maroon); font-size: 22px; transition: transform 0.3s ease; flex-shrink: 0; line-height: 1; }
+  .section-block.open .section-chevron { transform: rotate(180deg); }
+
+  .section-body { display: none; width: 100%; background: var(--bg); padding: 30px 26px 26px; border-left: 3px solid var(--maroon); }
+  .section-block.open .section-body { display: block; animation: sectionReveal 0.25s ease both; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes sectionReveal { from { transform: translateY(-5px); } to { transform: translateY(0); } }
+
+  .section-body p { font-size: 22px; line-height: 1.9; color: var(--text); margin-bottom: 20px; text-align: justify; font-family: 'EB Garamond', serif; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .sub-heading { font-family: 'Cinzel', serif; font-size: 12px; color: var(--maroon); letter-spacing: 0.14em; text-transform: uppercase; margin: 24px 0 10px; font-weight: 600; }
+  .sub-heading:first-child { margin-top: 0; }
+  .quote-block { border-left: 3px solid var(--gold); padding: 12px 20px; margin: 18px 0; background: var(--bg-darker); }
+  .quote-block p { font-style: italic !important; color: var(--text-mid) !important; font-size: 21px !important; margin-bottom: 0 !important; text-align: left !important; }
+  
+  .sit-with-this { margin-top: 26px; background: var(--sit-bg); border: 1px solid var(--border); border-left: 4px solid var(--maroon); }
+  .sit-title { font-family: 'Cinzel', serif; font-size: 11px; color: var(--maroon); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; padding: 18px 22px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .sit-title:after { content: '\25BE'; font-size: 14px; transition: transform 0.3s ease; flex-shrink: 0; }
+  .sit-with-this.open .sit-title:after { transform: rotate(180deg); }
+  .sit-body { display: none; padding: 0 22px 18px; }
+  .sit-with-this.open .sit-body { display: block; }
+  .sit-with-this p { font-style: italic !important; color: var(--text-mid) !important; font-size: 21px !important; line-height: 1.85 !important; margin-bottom: 0 !important; text-align: left !important; }
+
+  em { font-style: italic; }
+  strong { font-weight: 700; }
+
+  .site-footer { background: var(--bg-darker); border-top: 1px solid var(--border); padding: 18px 20px; text-align: center; font-size: 14px; color: var(--text-muted); font-style: italic; font-family: 'EB Garamond', serif; }
+
+  /* ── SAP TOGGLE ──────────────────────────────── */
+  .sap-toggle-wrap { margin-top: 22px; border: 1px solid var(--border); background: var(--bg-darkest); }
+  .sap-toggle-header { padding: 14px 18px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none; background: var(--bg-darkest); border-left: 3px solid var(--gold-dark); transition: background 0.15s; }
+  .sap-toggle-header:hover { background: var(--bg-darker); }
+  .sap-toggle-left { display: flex; flex-direction: column; gap: 2px; }
+  .sap-toggle-label { font-family: 'Cinzel', serif; font-size: 9px; color: var(--gold-dark); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+  .sap-toggle-title { font-family: 'EB Garamond', serif !important; font-size: 20px !important; font-weight: 700 !important; color: var(--text) !important; line-height: 1.2 !important; }
+  .sap-toggle-sub { font-family: 'EB Garamond', serif !important; font-size: 16px !important; font-style: italic !important; color: var(--text-muted) !important; }
+  .sap-toggle-chevron { font-size: 14px; color: var(--gold-dark); transition: transform 0.25s; flex-shrink: 0; }
+  .sap-toggle-body { display: none; border-top: 1px solid var(--border); }
+  .sap-toggle-wrap.open .sap-toggle-body { display: block; }
+  .sap-toggle-wrap.open .sap-toggle-chevron { transform: rotate(180deg); }
+
+  /* ── SAP BLOCKS ──────────────────────────────── */
+  .sap-layer { background: var(--bg-darkest); }
+  .sap-block { border-top: 1px solid var(--border-light); }
+  .sap-block:first-child { border-top: none; }
+  .sap-block-header { padding: 12px 18px; display: flex; align-items: center; gap: 12px; background: var(--bg-darkest); border-left: 4px solid var(--maroon); }
+  .sap-block-header.abhideya { border-left-color: var(--gold); }
+  .sap-block-header.prayojana { border-left-color: var(--gold-dark); }
+  .sap-pill { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; padding: 3px 8px; background: var(--maroon); color: var(--bg); flex-shrink: 0; }
+  .sap-pill.abhideya { background: var(--gold); }
+  .sap-pill.prayojana { background: var(--gold-dark); }
+  .sap-block-title { display: flex; flex-direction: column; }
+  .sap-concept { font-family: 'Cinzel', serif !important; font-size: 15px !important; font-weight: 600 !important; color: var(--maroon) !important; line-height: 1.2 !important; }
+  .sap-concept.abhideya { color: var(--gold-dark) !important; }
+  .sap-concept.prayojana { color: var(--gold-dark) !important; }
+  .sap-tagline { font-family: 'EB Garamond', serif !important; font-size: 15px !important; font-style: italic !important; color: var(--text-muted) !important; margin-top: 1px !important; }
+  .sap-block-body { padding: 18px 20px; background: var(--bg-darker); border-left: 4px solid var(--maroon); }
+  .sap-block-body.abhideya { border-left-color: var(--gold); background: var(--bg); }
+  .sap-block-body.prayojana { border-left-color: var(--gold-dark); background: var(--bg-darkest); }
+  .sap-block-body p { font-size: 22px !important; line-height: 1.9 !important; color: var(--text) !important; margin-bottom: 16px !important; text-align: justify !important; font-family: 'EB Garamond', serif !important; }
+  .sap-block-body p:last-child { margin-bottom: 0 !important; }
+  .sap-key-insight { margin: 12px 0 0; padding: 11px 16px; background: var(--bg-darkest); border: 1px solid var(--border); }
+  .sap-key-insight p { font-size: 20px !important; font-style: italic !important; color: var(--text-mid) !important; text-align: center !important; margin-bottom: 0 !important; }
+  .sap-practice { margin: 13px 0 0; padding: 12px 16px; background: var(--bg-darkest); border-left: 3px solid var(--gold); }
+  .sap-practice-label { font-family: 'Cinzel', serif; font-size: 9px; color: var(--gold-dark); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+  .sap-practice p { font-size: 20px !important; font-style: italic !important; color: var(--text-mid) !important; text-align: left !important; margin-bottom: 0 !important; }
+
+  /* ── VERSE-BY-VERSE ───────────────── */
+  .vclass-band { margin: 36px 0 14px; }
+  .vclass-band:first-child { margin-top: 4px; }
+  .vclass-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--bg-darkest); padding: 17px 22px; border-radius: 2px; }
+  .vclass-label { font-family: 'Cinzel', serif; font-size: 17px; letter-spacing: 0.04em; color: var(--bg); font-weight: 600; }
+  .vclass-meta { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); margin-top: 5px; }
+  .vclass-lecture { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bg); text-decoration: none; border: 1px solid rgba(255,255,255,0.32); padding: 9px 16px; border-radius: 2px; white-space: nowrap; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+  .vclass-lecture:hover { background: var(--gold); border-color: var(--gold); color: var(--bg-darkest); }
+  .vclass-lecture.muted { opacity: 0.5; border-style: dashed; cursor: default; }
+  .vclass-lecture.muted:hover { background: transparent; border-color: rgba(255,255,255,0.32); color: var(--bg); }
+  .verse-divider { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dark); text-align: center; margin: 50px 0 10px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .verse-block .section-num { color: var(--gold); }
+  .verse-block .section-name { font-family: 'Cinzel', serif; letter-spacing: 0.02em; }
+  .verse-body { padding-top: 10px; }
+  .verse-read-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.03em; color: var(--gold-dark); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 8px; transition: color 0.2s, border-color 0.2s; }
+  .verse-read-link:hover { color: var(--maroon); border-color: var(--gold); }
+  .vpart { border-top: 1px solid var(--border-light); }
+  .vpart:last-child { border-bottom: 1px solid var(--border-light); }
+  .vpart-head { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 16px 2px; user-select: none; }
+  .vpart-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-mid); }
+  .vpart-chev { font-size: 11px; color: var(--gold); transition: transform 0.25s; }
+  .vpart.open .vpart-chev { transform: rotate(180deg); }
+  .vpart-body { display: none; padding: 0 2px 20px; }
+  .vpart.open .vpart-body { display: block; animation: sectionReveal 0.25s ease both; }
+  .vpart-body p { font-size: 20px; line-height: 1.85; color: var(--text-mid); margin-bottom: 14px; }
+  .vpart-body p:last-child { margin-bottom: 0; }
+  .vkp-list { list-style: none; margin: 0; padding: 0; }
+  .vkp-list li { position: relative; padding-left: 26px; font-size: 20px; line-height: 1.7; color: var(--text-mid); margin-bottom: 13px; }
+  .vkp-list li:last-child { margin-bottom: 0; }
+  .vkp-list li:before { content: '\25C6'; position: absolute; left: 0; top: 2px; color: var(--gold); font-size: 12px; }
+  .vpart-empty { font-style: italic; opacity: 0.6; }
+  .bookmark-btn { background: none; border: none; cursor: pointer; padding: 4px 8px; font-size: 20px; color: var(--text-muted); flex-shrink: 0; transition: color 0.2s, transform 0.15s; line-height: 1; opacity: 0.6; }
+  .bookmark-btn:hover { opacity: 1; }
+  .bookmark-btn:active { transform: scale(1.2); }
+  .bookmark-btn.bookmarked { color: var(--maroon); opacity: 1; }
+
+  /* ── LIGHT MODE AND NIGHT MODE TEXT FIXES ── */
+  html:not(.night) .section-block.open .section-header .section-name, html:not(.night) .section-header:hover .section-name { color: #f6efdd !important; }
+  html:not(.night) .section-block.open .section-header .section-num, html:not(.night) .section-header:hover .section-num, html:not(.night) .section-block.open .section-header .section-chevron, html:not(.night) .section-header:hover .section-chevron { color: #e6b06d !important; }
+  html:not(.night) .section-block.open .section-header .section-texts, html:not(.night) .section-header:hover .section-texts { color: #dcc69d !important; }
+  html:not(.night) .chapter-item.available:hover .chapter-title-text { color: #f6efdd !important; }
+  html:not(.night) .chapter-item.available:hover .chapter-meta { color: #dcc69d !important; }
+  html:not(.night) .chapter-item.available:hover .chapter-arrow { color: #e6b06d !important; }
+  html:not(.night) .sap-toggle-title { color: #f6efdd !important; }
+  html:not(.night) .sap-toggle-label { color: #e6b06d !important; }
+  html:not(.night) .sap-toggle-sub { color: #dcc69d !important; }
+  html:not(.night) .saved-item:hover .saved-item-section { color: #f6efdd !important; }
+  html:not(.night) .saved-item:hover .saved-item-chapter { color: #dcc69d !important; }
+  html:not(.night) .saved-item:hover .saved-item-ref { color: #e6b06d !important; }
+  html:not(.night) .vclass-meta { color: #e6b06d !important; }
+  html:not(.night) .vclass-lecture { color: #f6efdd !important; }
+  html:not(.night) .vclass-lecture.muted { color: #ddc8a0 !important; opacity: 1 !important; }
+  html:not(.night) .section-body div[style*="--bg-darkest"], html:not(.night) .sap-block-body.prayojana p, html:not(.night) .sap-block-body.prayojana { color: #ece4d2 !important; }
+  .site-header .header-om { color: #f3e7cc; }
+  .site-header .header-main { color: #ffffff; }
+  .site-header .header-sub { color: #dabf96; }
+  .site-header .header-right { color: #dabf96; }
+  .header-saved { color: #f3e7cc !important; }
+  .header-night { color: #f3e7cc !important; }
+  .chapter-num-col { color: #f3e7cc; }
+  .chapter-item.architecture .chapter-num-col { color: #ffffff; }
+</style>
+</head>
+<body>
+<div id="app">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-om">Om</div>
+    <div class="header-titles">
+      <div class="header-main">Srimad Bhagavatam</div>
+      <div class="header-sub" id="header-sub">Srimad Bhagavatam &middot; Study Guide</div>
+    </div>
+    <button class="header-night" id="nightToggle" onclick="toggleNight()" title="Night reading mode" aria-label="Toggle night reading mode">&#9790;</button>
+    <button class="header-saved" onclick="showSaved()" title="Your saved sections">&#9829;&nbsp; Saved</button>
+    <div class="header-right">Translation &amp; Purports by<br>Srila Prabhupada</div>
+  </div>
+</header>
+
+<div id="home" class="screen active">
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner"> Canto 1 </div>
+  </div>
+  <div id="home-body">
+    <div class="canto-title-block">
+      <div class="canto-label">Canto 1</div>
+      <div class="canto-name">Creation</div>
+      <div class="canto-subtitle">Srimad Bhagavatam &middot; Canto One</div>
+    </div>
+    <div class="ornament">* * *</div>
+    <hr class="hr-ornament">
+    <div class="chapter-list" id="chapterGrid"></div>
+  </div>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+</div>
+
+<div id="chapter" class="screen">
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <span class="bc-back" onclick="goHome()">&#8592; Back</span>
+      <span class="bc-sep">&rsaquo;</span>
+      <span id="chapter-canto-label">Canto 1</span>
+      <span class="bc-sep">&rsaquo;</span>
+      <span id="breadcrumb-chapter"></span>
+    </div>
+  </div>
+  <div id="chapter-body">
+    <div class="chapter-title-block">
+      <div class="chapter-num-label" id="chapterNum"></div>
+      <div class="chapter-main-title" id="chapterTitle"></div>
+      <div class="chapter-sb-ref" id="chapterRef"></div>
+      <a class="vedabase-link" id="chapterVedabaseLink" href="#" target="_blank" rel="noopener noreferrer">Read the original verses &amp; Srila Prabhupada's purports on Vedabase &nbsp;&rarr;</a>
+    </div>
+    <div class="chapter-ornament">* * *</div>
+    <div id="sectionsContainer"></div>
+    <div class="chapter-nav" id="chapterNav"></div>
+  </div>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+</div>
+
+</div>
+
+<div id="architecture" class="screen">
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <span class="bc-link" onclick="goHome()">Srimad Bhagavatam</span>
+      <span class="bc-sep">&rsaquo;</span>
+      <span id="arch-canto-label">Canto 1</span>
+      <span class="bc-sep">&rsaquo;</span>
+      <span>The Architecture</span>
+    </div>
+  </div>
+  <div id="architecture-body" style="max-width:780px;margin:0 auto;padding:36px 20px 80px;">
+    <div class="chapter-title-block">
+      <div class="chapter-num-label">Reader's Guide</div>
+      <div class="chapter-main-title" id="arch-main-title">The Architecture of Canto 1</div>
+    </div>
+    <div class="chapter-ornament">* * *</div>
+    <div id="architectureContent"></div>
+  </div>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+</div>
+
+<div id="saved" class="screen">
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+            <span class="bc-back" onclick="goHome()">&#8592; Back</span>
+    </div>
+  </div>
+  <div id="saved-body">
+    <div class="saved-intro">
+      <div class="saved-count">Your Library</div>
+      <div class="saved-heading">Saved Sections</div>
+    </div>
+    <div id="savedList"></div>
+  </div>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+</div>
+<script>
+
+const sapContent = {
+  1: {
+    0: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">You are not a random being in a random universe</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>The very first verse of the Bhagavatam establishes the complete map of existence in a single sentence. The Supreme Absolute Truth &mdash; from whom creation, maintenance and annihilation proceed &mdash; is self-luminous, fully cognizant, and imparted Vedic knowledge directly into the heart of Brahma at the beginning of creation.</p>
+    <p>You are a conscious soul in a creation that flows from a conscious Source &mdash; and that Source is not distant or indifferent. <strong>He is the origin of all knowing. Your own capacity to understand flows from Him.</strong> This is the relationship the Bhagavatam begins by establishing. Everything else follows from it.</p>
+    <div class="sap-key-insight"><p>The Source imparted knowledge into the heart of the first created being. He still imparts it into every heart that turns toward Him with sincerity.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Bow before you begin</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>The verse opens with <em>om namo bhagavate vasudevaya</em> &mdash; the salutation that is both practice and doorway. The physical act of bowing &mdash; namah &mdash; is not merely ceremonial. It is the practice of lowering the ego sufficiently to allow something larger to enter. Before you can receive the Bhagavatam, you must create the space to receive it. That space is made by bowing.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Before reading a single verse today, chant <em>om namo bhagavate vasudevaya</em> three times. Not as a formality. As a genuine act of lowering &mdash; of saying: I do not already know what this text will show me. I come empty. I come open.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Resting in the source</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit the first verse promises is <em>satyam param dhimahi</em> &mdash; meditation upon the Supreme Absolute Truth. Not information about it. Not arguments for it. Meditation upon it. The fruit of this entire Bhagavatam is not more knowledge. It is a different quality of being. A being that rests in the Absolute Truth the way a river rests in the ocean. Not striving. Not grasping. Simply present in the source from which it came.</p>
+  </div>
+</div>`,
+    1: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">You are not reading about the Lord — you are in His presence</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>These verses establish the Bhagavatam's identity &mdash; it is the literary incarnation of the Lord, the ripened fruit of the wish-fulfilling tree of Vedic literature. The Bhagavatam is understood in the Vaishnava tradition as a living presence &mdash; as genuinely the Lord in the form of sound.</p>
+    <p>The relationship this section establishes is between the reader and the text itself. <strong>You are not reading about the Lord. You are in the presence of the Lord.</strong> Every verse you read with genuine attention is a direct encounter &mdash; not a description of an encounter. The text and the person it describes are non-different.</p>
+    <div class="sap-key-insight"><p>The Bhagavatam calls itself the ripened fruit &mdash; sweet, ready, needing no further preparation. It is already complete. The only question is whether you are ready to taste it.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Taste, do not analyze</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>The Bhagavatam describes itself as a ripened fruit that has fallen from the tree &mdash; sweet, ready to be tasted, needing no further cooking or preparation. Most of us approach a text by trying to extract meaning from it &mdash; we work at it, we analyze, we cross-reference. This text asks for something different. It asks to be tasted.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Read one verse today as if tasting something sweet. Not examining the chemistry of sweetness. Simply tasting. Let the words enter without immediately reaching for their meaning. Give the verse thirty seconds of simple presence before the analysis begins.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Attraction that grows rather than diminishes</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit is described as something that enlivens even the liberated soul. Even Sukadeva Gosvami &mdash; already free from all material desire &mdash; was drawn to the Bhagavatam. The fruit of this text is not liberation from something. It is <em>attraction toward</em> something. And that attraction grows rather than diminishes with time. This is how you know genuine spiritual nourishment from its substitute &mdash; genuine nourishment increases your hunger for the source rather than satisfying it with a lesser substitute.</p>
+  </div>
+</div>`,
+    2: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">You are held by a living chain of souls</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>This section establishes the chain of transmission &mdash; Krsna to Brahma, Brahma to Narada, Narada to Vyasadeva, Vyasadeva to Sukadeva, Sukadeva to the assembled sages through Suta Gosvami. This chain is not administrative. It is the living nervous system through which the knowledge moves.</p>
+    <p>The relationship here is the relationship of parampara &mdash; the disciplic succession. <strong>You are not receiving this knowledge from a book. You are receiving it from a living chain of souls who received it before you.</strong> The quality of your reception depends in part on your awareness of that chain &mdash; your gratitude toward it, your reverence for it, your sense of being held by it.</p>
+    <div class="sap-key-insight"><p>Suta Gosvami does not say &mdash; I have understood this. He says &mdash; I have received this. The posture of reception is the foundation of all genuine learning.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Study through relationship, not in isolation</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>Suta Gosvami says of himself &mdash; I have received this knowledge from Sukadeva Gosvami. He does not say &mdash; I have studied this, I have analyzed this, I have understood this on my own. He says &mdash; <em>I received this.</em> The practice this section points toward is reception through relationship.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Before you study today, bring to mind your spiritual master &mdash; the teacher through whom this knowledge is most alive for you. Acknowledge that what you are about to receive came through them, and through the chain behind them, all the way back to Krsna. Let that acknowledgment change the quality of your reading.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Love as a conductor of knowledge</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit of studying in the context of parampara is that the knowledge carries a charge it cannot carry when received in isolation. The same verse read in the context of a living relationship with a teacher produces a different quality of understanding than the same verse read alone as a scholarly exercise. This is not mysticism. It is the simple truth that <em>love is a conductor.</em> Knowledge passes more freely through love than through intellect alone.</p>
+  </div>
+</div>`,
+    3: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">The right question contains its own answer</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>The sages ask the most important question ever asked &mdash; what is the highest good for all people in all circumstances, especially at the moment of death? This question establishes the relationship between every human being and their own mortality. The sages are not asking this academically. They are asking it as people who know that time is limited and that the quality of their understanding will determine the quality of their leaving.</p>
+    <p>The relationship this section reveals is the relationship between the soul and death &mdash; and the Bhagavatam's consistent answer that <strong>death is not the enemy of a life well lived. It is its culmination.</strong> The entire text that follows is the answer to this one question asked by these sages on this afternoon in a forest.</p>
+    <div class="sap-key-insight"><p>You are one of those sages. The question they asked is your question. The answer being given is your answer. The forest of Naimisharanya is wherever you are reading this.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Create the conditions for genuine reception</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>The sages chose Naimisharanya deliberately &mdash; an auspicious place, an auspicious time, the right teacher, the right question. They created the conditions for genuine reception. The practice here is intentionality. Not perfect conditions &mdash; Pariksit received the entire Bhagavatam under a death sentence on the banks of a river. But <em>intentional</em> conditions.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Before you begin study today, ask yourself &mdash; am I creating the conditions for genuine reception? A specific time. A specific place. A specific intention. The act of choosing to study &mdash; at this time, in this place, with this question &mdash; is itself a form of the sages' bow.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Genuine inquiry produces genuine wisdom</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit of asking the right question is the right answer. The sages' question &mdash; what is the highest good for all people in all circumstances &mdash; receives in the chapters that follow one of the most complete answers in the history of human thought. But the answer only arrives because the question was asked with complete sincerity, in the right setting, to the right person. <em>Genuine inquiry produces genuine wisdom. And genuine wisdom, the Bhagavatam says, enlivens all the distressed souls of the universe &mdash; beginning with you.</em></p>
+  </div>
+</div>`
+  }
+};
+
+const archContent = `
+  <div style="background:var(--bg-darker);border-left:4px solid var(--maroon);padding:20px 24px;margin-bottom:28px;font-size:19px;line-height:1.85;color:var(--text-mid);font-style:italic;">
+    Canto 1 appears at first to jump from one topic to something entirely unrelated &mdash; from cosmic philosophy to a battlefield, from a wandering sage to a dying king. But nothing is accidental. Every chapter is a stone placed precisely where it must be. Once you see the architecture, the whole of Canto 1 reveals itself as one of the most elegantly constructed narratives in all of literature.
+  </div>
+
+  <div class="section-block">
+    <div class="section-header" style="cursor:default;">
+      <div class="section-num">Section 1</div>
+      <div class="section-name">The Overall Design &mdash; Two Preludes</div>
+      <div class="section-texts">Chapters 1 through 19</div>
+    </div>
+    <div class="section-body" style="display:block;">
+      <p>The Bhagavatam describes Canto 1 as having two distinct movements &mdash; two Preludes. Each is organized around questions and answers. Together they build the foundation upon which all twelve Cantos rest.</p>
+      <p class="sub-heading">Prelude Part A &mdash; Chapters 1 to 3</p>
+      <p>Chapter 1 establishes six questions from the sages. Chapters 2 and 3 answer them systematically. What is the highest good? &mdash; Bhakti. What is the essence of all scriptures? &mdash; Devotional service. What are the lila avatars? &mdash; All 22 incarnations in Chapter 3. Where did dharma go after Krsna left? &mdash; The Bhagavatam itself is where dharma took shelter. Chapters 1 to 3 are one complete unit. Question &mdash; answer. Question &mdash; answer. Clean, complete and self-contained.</p>
+      <p class="sub-heading">Prelude Part B &mdash; Chapters 4 to 19</p>
+      <p>In Chapter 4 the sages ask four entirely new questions. These drive the entire rest of Canto 1 all the way to Chapter 19. <strong>Question 1</strong> &mdash; Why was the Bhagavatam compiled? This takes six chapters to answer &mdash; Chapters 4 through the opening of Chapter 7. <strong>Question 2</strong> &mdash; What are the birth and activities of Pariksit? This takes Chapters 7 through 17 to answer. <strong>Questions 3 and 4</strong> &mdash; Why did Pariksit sit on the Ganges, and how did he meet Sukadeva? &mdash; Chapters 18 and 19. And with Sukadeva's arrival and Pariksit's question at the very end of Chapter 19 &mdash; <strong>the Bhagavatam proper begins. Canto 2 starts.</strong></p>
+      <p class="sub-heading">The Deeper Thread</p>
+      <p>What looks like a shift from philosophy to narrative is the Bhagavatam moving from <em>why</em> to <em>how</em>. First it tells you why bhakti is the answer. Then it shows you bhakti in action &mdash; in Kunti's prayers, in Draupadi's mercy, in Arjuna's surrender, in Bhishma's meditation at the moment of death. The philosophy becomes embodied in the story. There is also a zoom structure &mdash; from the most vast and cosmic scale down to one frightened woman running toward a chariot, down to one king sitting in grief on the Ganges bank. <em>The Bhagavatam keeps zooming in. From the cosmic to the personal. From the universal to the intimate. Because that is the direction of bhakti &mdash; always moving toward the specific and beloved.</em></p>
+    </div>
+  </div>
+`;
+
+function mkVerses(canto, chap, from, to) {
+  var arr = [];
+  for (var n = from; n <= to; n++) arr.push({ v: canto + '.' + chap + '.' + n });
+  return arr;
+}
+
+// Per-verse study notes. Add entries here as they are written.
+var verseData = {
+  "1.1.1": {
+    keyPoints: [
+      "Ma\u1e45gal\u0101cara\u1e47a \u2014 we bow before beginning.",
+      "<em>janm\u0101dy asya yata\u1e25</em> \u2014 the Absolute Truth is the source of everything.",
+      "K\u1e5b\u1e63\u1e47a is the cause of all causes \u2014 self-sufficient and fully conscious."
+    ],
+    purportSummary: "\u015Br\u012Bla Prabhup\u0101da establishes that the Bh\u0101gavatam begins by offering obeisances to the Supreme Truth, V\u0101sudeva. The Absolute is the origin of all emanations, directly and indirectly cognizant of everything, and independent of any other cause.",
+    classPoints: ""
+  }
+};
+
+const canto1Chapters = [
+  {
+    num: 1, title: "Questions by the Sages", available: true,
+    verseClasses: [
+      { label: "Class 1", date: "27 June 2026", range: "SB 1.1.1\u20131.1.12", lectureUrl: "", verses: mkVerses(1, 1, 1, 12) },
+      { label: "Class 2", date: "4 July 2026",  range: "SB 1.1.13\u20131.1.23", lectureUrl: "", verses: mkVerses(1, 1, 13, 23) }
+    ],
+    sections: [
+      { title: "The Opening Prayer", texts: "Text 1", gist: "The Bhagavatam opens by bowing to Krsna before anything else is said — Vyasadeva's invocation establishes that this entire work is itself an act of worship, not merely a text to be studied.", content: `
+        <p>The Bhagavatam does not simply begin &mdash; it <strong>bows down first</strong>. The very first verse is a prayer to Krsna. Vyasadeva, the author, offers his respectful obeisances before writing a single word. That itself is a teaching &mdash; before we receive this knowledge, we bow.</p>
+        <p class="sub-heading">What does Vyasadeva say about Krsna?</p>
+        <p>Krsna is the <em>cause of all causes</em> &mdash; not just the creator of this universe, but the very source behind all creation, all maintenance, and all destruction. Nothing exists independently of Him. He is directly and indirectly conscious of everything &mdash; nothing is hidden from Him. He is completely independent &mdash; there is no cause behind Him. He simply <em>is</em>.</p>
+        <p>He first gave Vedic knowledge to Brahma &mdash; so even the first and greatest created being received his wisdom as a gift from Krsna. His Maya is so powerful that even great sages and demigods are bewildered by it &mdash; like mistaking a mirage for real water. And yet &mdash; Krsna Himself lives in a <em>transcendental abode</em> completely untouched by all of this. The whole creation, with all its drama, is like a dream. He is the eternal reality behind it.</p>
+        <p>This single verse is like the entire Bhagavatam in seed form. Everything that follows is an expansion of what is said here.</p>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>Krsna is described as the cause behind everything &mdash; including the illusion that makes unreal things seem real. Does that land for you, or does it raise any questions?</p></div>
+      `},
+      { title: "What is the Bhagavatam?", texts: "Texts 2&ndash;3", gist: "The narrator explains what kind of book this is — the ripened fruit of the Vedic tree, meant to be tasted directly, free from the husk of ritual obligation that ordinary scripture requires.", content: `
+        <p>Before the story even begins, Vyasadeva tells us exactly what kind of book this is &mdash; and it makes some extraordinary claims.</p>
+        <p class="sub-heading">Text 2</p>
+        <p>This book <strong>completely rejects</strong> all religion done for material reasons &mdash; rituals for wealth, health, heaven, good harvest. It deals only with the <em>highest truth</em> &mdash; accessible to those who are <strong>pure in heart</strong>. Not necessarily learned. Pure in heart. That highest truth uproots the <em>three miseries</em> &mdash; from our own mind and body, from other living beings, and from nature. And the most stunning claim &mdash; <strong>this book alone is sufficient for God realization.</strong> Simply by hearing it attentively and submissively, the Supreme Lord becomes established in your heart. Not through ritual. Through <em>hearing</em>.</p>
+        <p class="sub-heading">Text 3</p>
+        <p>The Bhagavatam is the <em>ripest fruit of the tree of Vedic knowledge</em> &mdash; the final, most mature expression of everything. It came through the lips of Sukadeva Gosvami &mdash; and because of that, it became even sweeter. Like fruit made more delicious when offered with love. It is relishable even for liberated souls &mdash; people who have already gone beyond material existence still want to hear it.</p>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>The text says the Bhagavatam works through attentive and submissive hearing &mdash; not effort, not ritual, not scholarship. Just open, humble listening. Is there any part of you reading to evaluate rather than to receive?</p></div>
+      `},
+      { title: "The Setting & Who is Suta Gosvami", texts: "Texts 4&ndash;8", gist: "The scene is set at Naimisharanya, where the sages assemble around Suta Gosvami, the disciple who heard the Bhagavatam from Sukadeva and now retells it to those seeking the essence of dharma in the age of Kali.", content: `
+        <p class="sub-heading">The Place &mdash; Naimisaranya</p>
+        <p>A group of great sages have gathered in the holy forest of <em>Naimisaranya</em> for a <strong>thousand-year sacrifice</strong> &mdash; not for themselves, but entirely for the pleasure of the Lord and His devotees. Into this sacred gathering walks <strong>Suta Gosvami</strong>. The sages immediately offer him an elevated seat of honor &mdash; not because of his birth, but because of what he carries inside him. <em>True honor goes to the one who carries true knowledge.</em></p>
+        <p class="sub-heading">Who is Suta Gosvami?</p>
+        <p><strong>Free from vice</strong> &mdash; his character is pure. Knowledge in a pure vessel stays pure. <strong>Deeply learned</strong> &mdash; trained under proper guidance in all the scriptures. He did not just read books. He learned at the feet of masters. And most importantly, <strong>submissive</strong> &mdash; because of his gentleness, his spiritual masters gave him everything. Every blessing, every realization flowed to him because he never made himself bigger than his teachers.</p>
+        <p>Suta Gosvami is essentially a <em>transparent medium</em> &mdash; he received purely, and now he will give purely. This is the <strong>prampara</strong> &mdash; the chain of disciplic succession. Knowledge flows from heart to heart, teacher to student, when the student is truly humble.</p>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>The sages honored Suta Gosvami not for his birth or status but for what he carried within him and how humbly he carried it. In your own life &mdash; who do you go to for wisdom? And do you approach them with that same quality of submission?</p></div>
+      `},
+      { title: "The Five Questions of the Sages", texts: "Texts 9&ndash;23", gist: "The sages ask Suta five questions about the supreme good for humanity — questions whose answers will define the entire scope and purpose of the Bhagavatam that follows.", content: `
+        <p>The sages give context before asking. They say &mdash; look at the age we are living in. <strong>Kali Yuga.</strong> People are short-lived, quarrelsome, lazy, misguided, and constantly disturbed. There are thousands of scriptures with thousands of instructions. Nobody has the time or clarity to follow all of it. So please &mdash; <em>give us only the essence.</em></p>
+        <p class="sub-heading">The Five Questions</p>
+        <div class="quote-block"><p><strong>1.</strong> What is the <strong>highest good</strong> &mdash; the absolute and ultimate good for all people? <em>(Text 9)</em></p></div>
+        <div class="quote-block"><p><strong>2.</strong> What is the <strong>essence of all scriptures</strong>? Since there are so many and people cannot follow all of them &mdash; what is the single essential teaching? <em>(Text 11)</em></p></div>
+        <div class="quote-block"><p><strong>3.</strong> <strong>Why did the Lord appear as Krsna</strong>, son of Vasudeva and Devaki? What was the purpose of that specific incarnation? <em>(Text 12)</em></p></div>
+        <div class="quote-block"><p><strong>4.</strong> What are <strong>His various incarnations and their pastimes</strong>, as taught by the previous acaryas? <em>(Texts 13, 17, 18)</em></p></div>
+        <div class="quote-block"><p><strong>5.</strong> <strong>Now that Krsna has departed</strong>, to whom have the religious principles gone for shelter? Where does dharma reside now? <em>(Text 23)</em></p></div>
+        <p>Together these five questions form a complete map. The entire Bhagavatam &mdash; all 12 Cantos &mdash; is essentially Suta Gosvami's answer to these five questions.</p>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>Out of these five questions &mdash; which one feels most alive and personal to you right now? Which question, if answered deeply, would most change how you live or how you practice?</p></div>
+      `}
+    ]
+  }
+];
+
+var activeChapters = canto1Chapters;
+var activeCanto = { num: 1, name: "Creation" };
+
+function setVedabaseLink(cantoNum, chNum) {
+  var el = document.getElementById('chapterVedabaseLink');
+  if (!el) return;
+  el.href = 'https://vedabase.io/en/library/sb/' + cantoNum + '/' + chNum + '/';
+  el.style.display = 'inline-block';
+}
+
+function chapterMeta(ch) {
+  var parts = [];
+  if (ch.sections) parts.push(ch.sections.length + ' sections');
+  if (ch.verseClasses) parts.push(ch.verseClasses.reduce(function(a, g) { return a + g.verses.length; }, 0) + ' verses');
+  return parts.join(' &middot; ') || 'Coming soon';
+}
+
+function renderHome() {
+  var archEntry = (activeCanto.num === 1) ?
+    ('<div class="chapter-item architecture" onclick="openArchitecture()">' +
+    '<div class="chapter-num-col">Guide</div>' +
+    '<div class="chapter-body"><div>' +
+    '<div class="chapter-title-text">The Architecture of Canto 1</div>' +
+    '<div class="chapter-meta">How the story flows &mdash; and why</div>' +
+    '</div><div class="chapter-arrow">&#8250;</div></div></div>' +
+    '<div class="chapter-divider">Chapters</div>') : '';
+
+  document.getElementById('chapterGrid').innerHTML = archEntry + activeChapters.map(function(ch) {
+    var onclick = ch.available ? 'onclick="openChapter(' + (ch.num-1) + ')"' : '';
+    var arrow = ch.available ? '<div class="chapter-arrow">&#8250;</div>' : '';
+    var meta = ch.available ? chapterMeta(ch) : 'Coming soon';
+    return '<div class="chapter-item ' + (ch.available ? 'available' : 'coming-soon') + '" ' + onclick + '>' +
+      '<div class="chapter-num-col">' + ch.num + '</div>' +
+      '<div class="chapter-body"><div>' +
+      '<div class="chapter-title-text">' + ch.title + '</div>' +
+      '<div class="chapter-meta">' + meta + '</div>' +
+      '</div>' + arrow + '</div></div>';
+  }).join('');
+}
+
+function openChapter(idx) {
+  var ch = activeChapters[idx];
+  if (!ch || !ch.sections) return;
+  document.getElementById('chapterNum').textContent = 'Canto ' + activeCanto.num + ' · Chapter ' + ch.num;
+  document.getElementById('chapterTitle').innerHTML = ch.title;
+  document.getElementById('breadcrumb-chapter').textContent = 'Chapter ' + ch.num;
+  document.getElementById('chapterRef').textContent = 'SB ' + activeCanto.num + '.' + ch.num;
+  setVedabaseLink(activeCanto.num, ch.num);
+  var cl = document.getElementById('chapter-canto-label');
+  if (cl) cl.textContent = 'Canto ' + activeCanto.num;
+  saveReading(activeCanto.num, ch.num, ch.title);
+  var chSap = (activeCanto.num === 1) ? (sapContent[ch.num] || {}) : {};
+  var html = '';
+  var bmSec = -1;
+  try { var bm = localStorage.getItem('sb_bm_' + activeCanto.num + '_' + ch.num); if(bm!==null) bmSec=parseInt(bm); } catch(e){}
+  for (var i = 0; i < ch.sections.length; i++) {
+    var sec = ch.sections[i];
+    var hasSap = !!chSap[i];
+    var sapToggle = '';
+    if (hasSap) {
+      sapToggle = '<div class="sap-toggle-wrap" id="sap-wrap-' + i + '">' +
+        '<div class="sap-toggle-header" onclick="event.stopPropagation();toggleSap(' + i + ')">' +
+        '<div class="sap-toggle-left">' +
+        '<span class="sap-toggle-label">Layer 2 &middot; S &middot; A &middot; P</span>' +
+        '<span class="sap-toggle-title">Go Deeper</span>' +
+        '<span class="sap-toggle-sub">Sambandha &middot; Abhideya &middot; Prayojana</span>' +
+        '</div><span class="sap-toggle-chevron">&#9660;</span></div>' +
+        '<div class="sap-toggle-body"><div class="sap-layer">' + chSap[i] + '</div></div></div>';
+    }
+    var sapInd = hasSap ? '<span class="sap-indicator"> &nbsp;&#9670; Go Deeper</span>' : '';
+    html += '<div class="section-block" id="sec-' + i + '">' +
+      '<div class="section-header" onclick="toggleSection(' + i + ')">' +
+      '<div class="section-header-left">' +
+      '<div class="section-num">Section ' + (i+1) + '</div>' +
+      '<div class="section-name">' + sec.title + '</div>' +
+      '<div class="section-texts">' + sec.texts + sapInd + '</div>' +
+      '</div>' +
+      '<button class="bookmark-btn' + (i === bmSec ? ' bookmarked' : '') + '" data-sec="' + i + '" ' +
+        'onclick="event.stopPropagation();bookmarkSection(' + activeCanto.num + ',' + ch.num + ',' + i + ')">' +
+        (i === bmSec ? '\u2665' : '\u2661') + '</button>' +
+      '<div class="section-chevron">&#9660;</div></div>' +
+      '<div class="section-body">' + sec.content + sapToggle + '</div></div>';
+  }
+  if (ch.verseClasses) {
+    html += '<div class="verse-divider">Verse-by-Verse Notes</div>' + renderVerseChapter(ch);
+  }
+  document.getElementById('sectionsContainer').innerHTML = html;
+  showScreen('chapter');
+  window.scrollTo(0, 0);
+  restoreBookmark(activeCanto.num, ch.num);
+  renderChapterNav(activeCanto.num, ch.num);
+}
+
+
+function toggleSap(secIdx) {
+  var wrap = document.getElementById('sap-wrap-' + secIdx);
+  if (wrap) wrap.classList.toggle('open');
+}
+
+
+function toggleTranslation(el) {
+  var block = el.closest('.translation-block');
+  block.classList.toggle('trans-open');
+}
+
+function vpart(title, bodyHtml) {
+  return '<div class="vpart"><div class="vpart-head" onclick="toggleVPart(this)">' +
+    '<span class="vpart-title">' + title + '</span><span class="vpart-chev">&#9660;</span></div>' +
+    '<div class="vpart-body">' + bodyHtml + '</div></div>';
+}
+
+function renderVerseChapter(ch) {
+  var html = '';
+  ch.verseClasses.forEach(function(g) {
+    var lecture = g.lectureUrl ?
+      '<a class="vclass-lecture" href="' + g.lectureUrl + '" target="_blank" rel="noopener noreferrer">&#128250;&nbsp; Watch the class lecture &rarr;</a>' :
+      '<span class="vclass-lecture muted">&#128250;&nbsp; Lecture link coming soon</span>';
+    html += '<div class="vclass-band"><div class="vclass-head">' +
+      '<div class="vclass-left"><div class="vclass-label">' + g.label + '</div>' +
+      '<div class="vclass-meta">' + g.range + ' &middot; ' + g.date + '</div></div>' +
+      lecture + '</div></div>';
+    g.verses.forEach(function(v) {
+      var d = (typeof verseData !== 'undefined' && verseData[v.v]) ? verseData[v.v] : {};
+      var vbUrl = 'https://vedabase.io/en/library/sb/' + v.v.split('.').join('/') + '/';
+      var kp = (d.keyPoints && d.keyPoints.length) ?
+        '<ul class="vkp-list"><li>' + d.keyPoints.join('</li><li>') + '</li></ul>' :
+        '<p class="vpart-empty">Key points to be added.</p>';
+      var summary = d.purportSummary ?
+        '<p>' + d.purportSummary + '</p>' :
+        '<p class="vpart-empty">Summary of \u015Br\u012Bla Prabhup\u0101da\u2019s purport to be added.</p>';
+      var pts = d.classPoints ? d.classPoints :
+        '<p class="vpart-empty">Points discussed in class to be added.</p>';
+      html += '<div class="section-block verse-block">' +
+        '<div class="section-header" onclick="toggleVerse(this)">' +
+        '<div class="section-header-left">' +
+        '<div class="section-num">Verse</div>' +
+        '<div class="section-name">SB ' + v.v + '</div>' +
+        '</div>' +
+        '<button class="bookmark-btn' + (isVerseSaved(v.v) ? ' bookmarked' : '') + '" title="' + (isVerseSaved(v.v) ? 'Saved \u2014 tap to remove' : 'Save this verse') + '" onclick="event.stopPropagation();toggleVerseSave(\'' + v.v + '\', this)">' + (isVerseSaved(v.v) ? '\u2665' : '\u2661') + '</button>' +
+        '<div class="section-chevron">&#9660;</div></div>' +
+        '<div class="section-body verse-body">' +
+        '<a class="verse-read-link" href="' + vbUrl + '" target="_blank" rel="noopener noreferrer">&#128214;&nbsp; Read the verse &amp; Prabhup\u0101da\u2019s translation on Vedabase &rarr;</a>' +
+        vpart('&#128273;&nbsp; Key Points', kp) +
+        vpart('&#9999;&nbsp; Summary of the Purport', summary) +
+        vpart('&#128172;&nbsp; Points Discussed in Class', pts) +
+        '</div></div>';
+    });
+  });
+  return html;
+}
+
+function toggleVerse(el) { el.closest('.section-block').classList.toggle('open'); }
+function toggleVPart(el) { el.closest('.vpart').classList.toggle('open'); }
+
+/* ── Per-verse save (library) ── */
+function getSavedVerses() {
+  try { return JSON.parse(localStorage.getItem('sb_saved_verses') || '[]'); } catch(e) { return []; }
+}
+function setSavedVerses(arr) {
+  try { localStorage.setItem('sb_saved_verses', JSON.stringify(arr)); } catch(e) {}
+}
+function isVerseSaved(ref) { return getSavedVerses().indexOf(ref) !== -1; }
+function toggleVerseSave(ref, btn) {
+  var arr = getSavedVerses();
+  var i = arr.indexOf(ref);
+  if (i === -1) arr.push(ref); else arr.splice(i, 1);
+  setSavedVerses(arr);
+  var on = arr.indexOf(ref) !== -1;
+  if (btn) {
+    btn.classList.toggle('bookmarked', on);
+    btn.innerHTML = on ? '\u2665' : '\u2661';
+    btn.setAttribute('title', on ? 'Saved \u2014 tap to remove' : 'Save this verse');
+  }
+}
+function removeSavedVerse(ref) {
+  var arr = getSavedVerses();
+  var i = arr.indexOf(ref);
+  if (i !== -1) { arr.splice(i, 1); setSavedVerses(arr); }
+  showSaved();
+}
+function openSavedVerse(ref) {
+  openCanto(1);
+  openChapter(0);
+  setTimeout(function() {
+    var blocks = document.querySelectorAll('#sectionsContainer .verse-block');
+    blocks.forEach(function(b) {
+      var nm = b.querySelector('.section-name');
+      if (nm && nm.textContent.replace(/^SB\s*/, '') === ref) {
+        b.classList.add('open');
+        var y = b.getBoundingClientRect().top + window.pageYOffset - 90;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  }, 90);
+}
+
+function toggleSection(idx) {
+  const block = document.getElementById('sec-' + idx);
+  const isOpen = block.classList.contains('open');
+  document.querySelectorAll('.section-block').forEach(b => b.classList.remove('open'));
+  if (!isOpen) {
+    block.classList.add('open');
+    setTimeout(() => block.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 60);
+  }
+}
+
+function renderIdxCantoGeneric(blockId, cantoNum, cantoName, chapters) {
+  var idxBlock = document.getElementById(blockId);
+  if (!idxBlock) return;
+  var availCount = chapters.filter(function(c){ return c.available; }).length;
+  var badgeClass = (availCount === chapters.length) ? 'badge-complete' : 'badge-progress';
+  var badgeText = (availCount === chapters.length) ? 'Complete' : 'In Progress';
+  var html = '<div class="idx-canto">' +
+    '<div class="idx-canto-hdr" onclick="toggleIdxCanto(this)">' +
+    '<div class="idx-canto-left"><span class="idx-canto-num">Canto ' + cantoNum + '</span>' +
+    '<span class="idx-canto-name">' + cantoName + '</span></div>' +
+    '<div class="idx-canto-right"><span class="canto-badge ' + badgeClass + '">' + badgeText + '</span>' +
+    '<span class="idx-chevron">&#9660;</span></div></div>' +
+    '<div class="idx-chapters chapter-list">';
+  chapters.forEach(function(ch) {
+    var ref = ch.num;
+    if (ch.available) {
+      var idxMeta = chapterMeta(ch), secsHtml;
+      if (ch.sections) {
+        secsHtml = ch.sections.map(function(s) {
+          var gistHtml = s.gist ? '<span class="idx-sec-gist">' + s.gist + '</span>' : '';
+          return '<div class="idx-sec-row"><span class="idx-sec-dot">&#9670;</span>' +
+            '<div class="idx-sec-content"><span class="idx-sec-name">' + s.title + '</span>' +
+            gistHtml + '</div></div>';
+        }).join('');
+      } else {
+        secsHtml = ch.verseClasses.map(function(g) {
+          return '<div class="idx-sec-row"><span class="idx-sec-dot">&#9670;</span>' +
+            '<div class="idx-sec-content"><span class="idx-sec-name">' + g.label + '</span>' +
+            '<span class="idx-sec-gist">' + g.range + ' &middot; ' + g.date + '</span></div></div>';
+        }).join('');
+      }
+      html += '<div class="chapter-item available idx-chapter" onclick="toggleIdxChapter(this)">' +
+        '<div class="chapter-num-col">' + ref + '</div>' +
+        '<div class="chapter-body"><div>' +
+        '<div class="chapter-title-text">' + ch.title + '</div>' +
+        '<div class="chapter-meta">' + idxMeta + '</div>' +
+        '</div><div class="chapter-arrow">&#8250;</div></div></div>' +
+        '<div class="idx-sec-list">' + secsHtml + '</div>';
+    } else {
+      html += '<div class="chapter-item coming-soon">' +
+        '<div class="chapter-num-col">' + ch.num + '</div>' +
+        '<div class="chapter-body"><div>' +
+        '<div class="chapter-title-text">' + ch.title + '</div>' +
+        '<div class="chapter-meta">Coming soon</div>' +
+        '</div></div></div>';
+    }
+  });
+  html += '</div></div>';
+  idxBlock.innerHTML = html;
+}
+
+function renderIdxCanto1() {
+  renderIdxCantoGeneric('idx-canto1-block', 1, 'Creation', canto1Chapters);
+}
+
+
+
+var searchIndex = null;
+function buildSearchIndex() {
+  if (searchIndex) return searchIndex;
+  searchIndex = [];
+  var tmp = document.createElement('div');
+  function strip(s) { tmp.innerHTML = s || ''; return (tmp.textContent || '').trim(); }
+  [1, 2, 3, 4].forEach(function(canto) {
+    var chapters = getCantoChapters(canto);
+    chapters.forEach(function(ch) {
+      if (!ch.sections) return;
+      searchIndex.push({ type: 'chapter', canto: canto, chap: ch.num, secIdx: null, title: ch.title, titleText: strip(ch.title).toLowerCase(), ref: 'SB ' + canto + '.' + ch.num });
+      if (!ch.verseClasses) ch.sections.forEach(function(sec, i) {
+        searchIndex.push({ type: 'section', canto: canto, chap: ch.num, secIdx: i, title: sec.title, titleText: strip(sec.title).toLowerCase(), chTitle: ch.title, ref: 'SB ' + canto + '.' + ch.num });
+      });
+    });
+  });
+  return searchIndex;
+}
+
+function escapeHtml(s) { return String(s).replace(/[&<>"]/g, function(c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+var searchActiveIdx = -1;
+function onSearchInput() {
+  var q = document.getElementById('searchInput').value.trim();
+  var box = document.getElementById('searchResults');
+  searchActiveIdx = -1;
+  if (!q) { box.innerHTML = ''; return; }
+  var idx = buildSearchIndex();
+  var results = [];
+  var m = q.match(/^(\d+)\s*[.\-:\s]\s*(\d+)$/);
+  var mc = null, mch = null;
+  if (m) {
+    mc = parseInt(m[1]); mch = parseInt(m[2]);
+    var chObj = getChapterObj(mc, mch);
+    if (chObj && (chObj.sections || chObj.verseClasses)) {
+      results.push({ type: 'chapter', canto: mc, chap: mch, secIdx: null, title: chObj.title, ref: 'SB ' + mc + '.' + mch, jump: true });
+    }
+  }
+  var ql = q.toLowerCase();
+  for (var i = 0; i < idx.length && results.length < 14; i++) {
+    var e = idx[i];
+    if (e.titleText.indexOf(ql) !== -1 || e.ref.toLowerCase().indexOf(ql) !== -1) {
+      if (m && e.type === 'chapter' && e.canto === mc && e.chap === mch) continue;
+      results.push(e);
+    }
+  }
+  if (!results.length) { box.innerHTML = '<div class="search-no-results">No matches for &ldquo;' + escapeHtml(q) + '&rdquo;</div>'; return; }
+  box.innerHTML = results.map(function(r) {
+    var kind = r.jump ? 'Jump to' : (r.type === 'chapter' ? 'Chapter' : 'Section');
+    var sub = r.type === 'section' ? ('Chapter ' + r.chap + ' &middot; ' + r.chTitle) : ('Canto ' + r.canto);
+    return '<button class="search-result" onclick="openTo(' + r.canto + ',' + r.chap + ',' + (r.secIdx === null ? 'null' : r.secIdx) + ')">' +
+      '<div class="search-result-ref">' + r.ref + '</div>' +
+      '<div class="search-result-text">' +
+        '<div class="search-result-title">' + r.title + '</div>' +
+        '<div class="search-result-sub">' + sub + '</div>' +
+      '</div>' +
+      '<div class="search-result-kind">' + kind + '</div>' +
+    '</button>';
+  }).join('');
+}
+
+function onSearchKey(e) {
+  var box = document.getElementById('searchResults');
+  var items = box.querySelectorAll('.search-result');
+  if (e.key === 'Escape') { document.getElementById('searchInput').value = ''; box.innerHTML = ''; searchActiveIdx = -1; return; }
+  if (!items.length) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); searchActiveIdx = Math.min(searchActiveIdx + 1, items.length - 1); updateSearchActive(items); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); searchActiveIdx = Math.max(searchActiveIdx - 1, 0); updateSearchActive(items); }
+  else if (e.key === 'Enter') { e.preventDefault(); var t = searchActiveIdx >= 0 ? items[searchActiveIdx] : items[0]; if (t) t.click(); }
+}
+
+function updateSearchActive(items) {
+  items.forEach(function(it, i) { it.classList.toggle('active', i === searchActiveIdx); });
+  if (searchActiveIdx >= 0) items[searchActiveIdx].scrollIntoView({ block: 'nearest' });
+}
+
+function openTo(canto, chap, secIdx) {
+  var si = document.getElementById('searchInput'); if (si) si.value = '';
+  var sr = document.getElementById('searchResults'); if (sr) sr.innerHTML = '';
+  searchActiveIdx = -1;
+  if (canto === 1) { openCanto(1); openChapter(chap - 1); }
+  if (secIdx !== null && secIdx >= 0) {
+    setTimeout(function() {
+      document.querySelectorAll('.section-block').forEach(function(b) { b.classList.remove('open'); });
+      var el = document.getElementById('sec-' + secIdx);
+      if (el) { el.classList.add('open'); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }, 90);
+  }
+}
+
+function openIndex() {
+  showScreen('index'); renderIdxCanto1(); renderIdxCanto2(); renderIdxCanto3(); renderIdxCanto4();
+  window.scrollTo(0,0);
+}
+function toggleIdxCanto(el) {
+  var canto = el.closest('.idx-canto');
+  if (!canto || canto.classList.contains('coming-idx-canto')) return;
+  document.querySelectorAll('.idx-canto').forEach(function(c){
+    if (c !== canto) c.classList.remove('idx-open');
+  });
+  canto.classList.toggle('idx-open');
+}
+function toggleIdxChapter(el) {
+  event.stopPropagation();
+  var list = el.closest('.idx-chapters');
+  list.querySelectorAll('.idx-chapter').forEach(function(c){
+    if (c !== el) c.classList.remove('idx-ch-open');
+  });
+  el.classList.toggle('idx-ch-open');
+}
+
+
+
+function bookmarkSection(cantoNum, chapterNum, secIdx) {
+  try {
+    var key = 'sb_bm_' + cantoNum + '_' + chapterNum;
+    var current = localStorage.getItem(key);
+    // Toggle off if same section tapped again
+    if (current !== null && parseInt(current) === secIdx) {
+      localStorage.removeItem(key);
+      updateBookmarkIcons(cantoNum, chapterNum, -1);
+    } else {
+      localStorage.setItem(key, secIdx);
+      updateBookmarkIcons(cantoNum, chapterNum, secIdx);
+    }
+  } catch(e) {}
+}
+
+function updateBookmarkIcons(cantoNum, chapterNum, activeIdx) {
+  var btns = document.querySelectorAll('.bookmark-btn');
+  btns.forEach(function(btn) {
+    var idx = parseInt(btn.getAttribute('data-sec'));
+    if (idx === activeIdx) {
+      btn.classList.add('bookmarked');
+      btn.textContent = '\u2665'; // filled heart/bookmark
+    } else {
+      btn.classList.remove('bookmarked');
+      btn.textContent = '\u2661'; // empty
+    }
+  });
+}
+
+function restoreBookmark(cantoNum, chapterNum) {
+  try {
+    var key = 'sb_bm_' + cantoNum + '_' + chapterNum;
+    var saved = localStorage.getItem(key);
+    if (saved === null) return;
+    var secIdx = parseInt(saved);
+    var secEl = document.getElementById('sec-' + secIdx);
+    if (secEl) {
+      secEl.classList.add('open');
+      updateBookmarkIcons(cantoNum, chapterNum, secIdx);
+      setTimeout(function() {
+        var el = document.getElementById('sec-' + secIdx);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 400);
+    }
+  } catch(e) {}
+}
+
+function saveReading(cantoNum, chapterNum, chapterTitle) {
+  try {
+    localStorage.setItem('sb_last_canto', cantoNum);
+    localStorage.setItem('sb_last_chapter', chapterNum);
+    localStorage.setItem('sb_last_title', chapterTitle);
+  } catch(e) {}
+}
+
+function continueReading() {
+  try {
+    var canto = parseInt(localStorage.getItem('sb_last_canto'));
+    var chapter = parseInt(localStorage.getItem('sb_last_chapter'));
+    if (!canto || !chapter) return;
+    if (canto === 1) {
+      openCanto(1);
+      openChapter(chapter - 1);
+    }
+  } catch(e) {}
+}
+
+function loadContinueBanner() {
+  try {
+    var canto = localStorage.getItem('sb_last_canto');
+    var chapter = localStorage.getItem('sb_last_chapter');
+    var title = localStorage.getItem('sb_last_title');
+    if (canto && chapter && title) {
+      document.getElementById('continue-text').textContent =
+        'SB ' + canto + '.' + chapter + ' · ' + title;
+      document.getElementById('continue-banner').style.display = 'block';
+    }
+  } catch(e) {}
+}
+
+
+function openCanto(num) {
+  if (num === 1) {
+    activeChapters = canto1Chapters;
+    activeCanto = { num: 1, name: 'Creation' };
+    document.getElementById('header-sub').textContent = 'Canto 1 — Creation · Study Guide';
+    renderHome();
+    showScreen('home');
+    window.scrollTo(0, 0);
+  }
+}
+
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function toggleSit(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+function openArchitecture() {
+  var ac = archContent;
+  var cantolabel = activeCanto ? 'Canto ' + activeCanto.num : 'Canto 1';
+  document.getElementById('architectureContent').innerHTML = ac;
+  var al = document.getElementById('arch-canto-label');
+  if (al) al.textContent = cantolabel;
+  var amt = document.getElementById('arch-main-title');
+  if (amt) amt.textContent = 'The Architecture of ' + cantolabel;
+  showScreen('architecture');
+  window.scrollTo(0, 0);
+}
+
+function getChapterObj(canto, num) {
+  var arr = getCantoChapters(canto);
+  for (var i = 0; i < arr.length; i++) { if (arr[i].num === num) return arr[i]; }
+  return null;
+}
+
+function showSaved() {
+  var items = [];
+  try {
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('sb_bm_') === 0) {
+        var rest = k.substring(6);
+        var us = rest.indexOf('_');
+        if (us < 0) continue;
+        var canto = parseInt(rest.substring(0, us));
+        var chap = parseInt(rest.substring(us + 1));
+        var secIdx = parseInt(localStorage.getItem(k));
+        if (isNaN(canto) || isNaN(chap) || isNaN(secIdx)) continue;
+        var chObj = getChapterObj(canto, chap);
+        if (!chObj || !chObj.sections || !chObj.sections[secIdx]) continue;
+        items.push({ canto: canto, chap: chap, secIdx: secIdx, chTitle: chObj.title, secTitle: chObj.sections[secIdx].title });
+      }
+    }
+  } catch(e) {}
+  items.sort(function(a, b) { return a.canto - b.canto || a.chap - b.chap; });
+  var list = document.getElementById('savedList');
+  var savedVerses = getSavedVerses().slice().sort(function(a, b) {
+    var pa = a.split('.').map(Number), pb = b.split('.').map(Number);
+    return (pa[0]-pb[0]) || (pa[1]-pb[1]) || (pa[2]-pb[2]);
+  });
+  if (!items.length && !savedVerses.length) {
+    list.innerHTML = '<div class="saved-empty">You haven\'t saved anything yet.' +
+      '<div class="saved-empty-hint">Tap the &#9825; beside any verse or section while reading to save it here.</div></div>';
+  } else {
+    var html = '';
+    if (savedVerses.length) {
+      html += '<div class="saved-canto-label">Saved Verses</div>';
+      savedVerses.forEach(function(ref) {
+        var parts = ref.split('.');
+        var chObj = getChapterObj(parseInt(parts[0]), parseInt(parts[1]));
+        var chTitle = chObj ? chObj.title : '';
+        html += '<div class="saved-item" onclick="openSavedVerse(\'' + ref + '\')">' +
+          '<div class="saved-item-ref">SB ' + ref + '</div>' +
+          '<div class="saved-item-text">' +
+            '<div class="saved-item-section">Verse ' + ref + '</div>' +
+            '<div class="saved-item-chapter">Chapter ' + parts[1] + ' &middot; ' + chTitle + '</div>' +
+          '</div>' +
+          '<button class="saved-item-remove" title="Remove from saved" onclick="event.stopPropagation();removeSavedVerse(\'' + ref + '\')">&#9829;</button>' +
+          '</div>';
+      });
+    }
+    var lastCanto = null;
+    for (var j = 0; j < items.length; j++) {
+      var it = items[j];
+      if (it.canto !== lastCanto) {
+        html += '<div class="saved-canto-label">Saved Sections &middot; Canto ' + it.canto + '</div>';
+        lastCanto = it.canto;
+      }
+      html += '<div class="saved-item" onclick="openSavedItem(' + it.canto + ',' + it.chap + ')">' +
+        '<div class="saved-item-ref">SB ' + it.canto + '.' + it.chap + '</div>' +
+        '<div class="saved-item-text">' +
+          '<div class="saved-item-section">' + it.secTitle + '</div>' +
+          '<div class="saved-item-chapter">Chapter ' + it.chap + ' &middot; ' + it.chTitle + '</div>' +
+        '</div>' +
+        '<button class="saved-item-remove" title="Remove from saved" onclick="event.stopPropagation();removeSaved(' + it.canto + ',' + it.chap + ')">&#9829;</button>' +
+        '</div>';
+    }
+    list.innerHTML = html;
+  }
+  showScreen('saved');
+  window.scrollTo(0, 0);
+}
+
+function openSavedItem(canto, num) {
+  openCanto(1); openChapter(num - 1);
+}
+
+function removeSaved(canto, num) {
+  try { localStorage.removeItem('sb_bm_' + canto + '_' + num); } catch(e) {}
+  showSaved();
+}
+
+function getCantoChapters(canto) {
+  return canto1Chapters;
+}
+
+function goToChapter(canto, num) {
+  openChapter(num - 1);
+}
+
+var chapterNavState = { canto: null, prevNum: null, nextNum: null };
+
+function renderChapterNav(canto, num) {
+  var nav = document.getElementById('chapterNav');
+  if (!nav) return;
+  var chapters = getCantoChapters(canto);
+  var idx = -1;
+  for (var i = 0; i < chapters.length; i++) { if (chapters[i].num === num) { idx = i; break; } }
+  var prev = null, next = null;
+  for (var p = idx - 1; p >= 0; p--) { if (chapters[p].sections) { prev = chapters[p]; break; } }
+  for (var n = idx + 1; n < chapters.length; n++) { if (chapters[n].sections) { next = chapters[n]; break; } }
+  chapterNavState = { canto: canto, prevNum: prev ? prev.num : null, nextNum: next ? next.num : null };
+  function card(ch, dir) {
+    if (ch) {
+      var label = dir === 'prev' ? '&#8249;&nbsp; Previous Chapter' : 'Next Chapter &nbsp;&#8250;';
+      return '<button class="chnav ' + dir + '" onclick="goToChapter(' + canto + ',' + ch.num + ')">' +
+        '<span class="chnav-label">' + label + '</span>' +
+        '<span class="chnav-title">Chapter ' + ch.num + ' &middot; ' + ch.title + '</span></button>';
+    }
+    var endLabel = dir === 'prev' ? '&#8249;&nbsp; Back' : 'Back &nbsp;&#8250;';
+    return '<button class="chnav ' + dir + '" onclick="goHome()">' +
+      '<span class="chnav-label">' + endLabel + '</span>' +
+      '<span class="chnav-title">All Chapters</span></button>';
+  }
+  nav.innerHTML = card(prev, 'prev') + card(next, 'next');
+}
+
+// Arrow keys navigate between chapters while reading.
+document.addEventListener('keydown', function(e) {
+  if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+  var tag = (e.target && e.target.tagName) || '';
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+  var chapterScreen = document.getElementById('chapter');
+  if (!chapterScreen || !chapterScreen.classList.contains('active')) return;
+  if (e.key === 'ArrowRight' && chapterNavState.nextNum != null) {
+    e.preventDefault();
+    goToChapter(chapterNavState.canto, chapterNavState.nextNum);
+  } else if (e.key === 'ArrowLeft' && chapterNavState.prevNum != null) {
+    e.preventDefault();
+    goToChapter(chapterNavState.canto, chapterNavState.prevNum);
+  }
+});
+
+function goHome() {
+  {
+    showScreen('home');
+  }
+  window.scrollTo(0, 0);
+}
+
+function applyNight(on) {
+  document.documentElement.classList.toggle('night', on);
+  var btn = document.getElementById('nightToggle');
+  if (btn) { btn.innerHTML = on ? '&#9728;' : '&#9790;'; btn.title = on ? 'Day mode' : 'Night reading mode'; }
+  try { localStorage.setItem('sb_night', on ? '1' : '0'); } catch(e) {}
+}
+function toggleNight() { applyNight(!document.documentElement.classList.contains('night')); }
+function loadNight() { try { applyNight(localStorage.getItem('sb_night') === '1'); } catch(e) {} }
+
+loadNight();
+renderHome();
+loadContinueBanner();
+</script>
+</body>
+</html>
