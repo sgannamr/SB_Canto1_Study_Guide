@@ -41,7 +41,6 @@
     --sit-border:   #d97757;
   }
   html.night, html.night body { background: #262624; }
-  html.night .invocation-bar { background: var(--bg-darkest); color: var(--gold-dark); border-bottom: 1px solid #3d3c39; }
   html.night .cantos-hero { background: #30302e; border-bottom-color: #3d3c39; }
   html.night .cantos-hero-om { color: #d97757; }
   html.night .cantos-hero-title { color: #f5f4ee; }
@@ -62,17 +61,6 @@
 
   .screen { display: none; }
   .screen.active { display: block; background: var(--bg); min-height: 100vh; }
-
-  .invocation-bar {
-    background: var(--maroon);
-    color: var(--bg);
-    text-align: center;
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-size: 16px;
-    letter-spacing: 0.05em;
-    padding: 6px 10px;
-  }
 
   .site-header {
     background: var(--bg-darkest);
@@ -197,6 +185,17 @@
   .chnav-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); }
   .chnav-title { font-family: 'EB Garamond', serif; font-size: 18px; color: var(--maroon); font-weight: 500; line-height: 1.3; }
 
+  .section-continue { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border-light); }
+  .sec-next { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; cursor: pointer; font-family: inherit; color: var(--text); background: var(--bg-darker); border: 1px solid var(--border); padding: 15px 20px; transition: background 0.15s, border-color 0.15s; }
+  .sec-next:hover { background: var(--bg-darkest); border-color: var(--maroon); }
+  .sec-next-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); }
+  .sec-next-title { font-family: 'EB Garamond', serif; font-size: 18px; color: var(--maroon); font-weight: 500; line-height: 1.3; }
+  .sec-next.end { background: var(--maroon); border-color: var(--maroon-dark); }
+  .sec-next.end:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
+  .sec-next.end .sec-next-label { color: var(--bg-darker); }
+  .sec-next.end .sec-next-title { color: #fff; }
+  @media (max-width: 480px) { .chapter-nav { grid-template-columns: 1fr; margin-top: 22px; } .chnav.next { text-align: left; align-items: flex-start; } }
+
   #home-body { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
   .ornament { text-align: center; font-size: 26px; color: var(--gold); margin: 8px 0 20px; line-height: 1; }
   .canto-title-block { text-align: center; padding-bottom: 8px; margin-bottom: 8px; }
@@ -208,7 +207,7 @@
   .chapter-item { display: flex; align-items: stretch; border: 1px solid var(--border-light); background: var(--bg-darker); transition: background 0.15s, border-color 0.15s; }
   .chapter-item.available { cursor: pointer; }
   .chapter-item.available:hover { background: var(--bg-darkest); border-color: var(--border); }
-  .chapter-num-col { background: var(--bg-darkest); border-right: 1px solid var(--border-light); padding: 12px 14px; min-width: 58px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 13px; color: var(--text-muted); transition: background 0.15s, color 0.15s; flex-shrink: 0; }
+  .chapter-num-col { background: var(--bg-darkest); border-right: 1px solid var(--border-light); padding: 12px 14px; min-width: 52px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 13px; color: var(--text-muted); transition: background 0.15s, color 0.15s; flex-shrink: 0; }
   .chapter-item.available:hover .chapter-num-col { background: var(--maroon); color: var(--bg); border-right-color: var(--maroon); }
   .chapter-body { padding: 12px 16px; flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   .chapter-title-text { font-size: 20px; color: var(--maroon); line-height: 1.4; font-family: 'EB Garamond', serif; font-weight: 500; }
@@ -232,13 +231,8 @@
   #chapter-body { max-width: 780px; margin: 0 auto; padding: 36px 20px 80px; }
   .chapter-title-block { text-align: center; margin-bottom: 8px; padding-bottom: 8px; }
   .chapter-sb-ref { font-family: 'Cinzel', serif; font-size: 10px; color: var(--text-muted); letter-spacing: 0.16em; text-transform: uppercase; margin-top: 4px; opacity: 0.7; }
-  
   .vedabase-link { display: none; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--maroon); text-decoration: none; border-bottom: 1px solid var(--maroon); padding-bottom: 3px; margin-top: 10px; opacity: 1; transition: color 0.2s, border-color 0.2s; }
   .vedabase-link:hover { color: var(--maroon-dark); border-color: var(--maroon-dark); }
-  
-  .sec-vb-link { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; transition: opacity 0.2s; cursor: pointer; }
-  .sec-vb-link:hover { opacity: 0.7; }
-
   .chapter-num-label { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold-dark); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; }
   .chapter-main-title { font-family: 'Cinzel', serif; font-size: clamp(18px, 4vw, 28px); font-weight: 600; color: var(--text); line-height: 1.3; }
   .chapter-ornament { text-align: center; font-size: 22px; color: var(--gold); margin: 10px 0 28px; }
@@ -275,12 +269,6 @@
   .sit-body { display: none; padding: 0 22px 18px; }
   .sit-with-this.open .sit-body { display: block; }
   .sit-with-this p { font-style: italic !important; color: var(--text-mid) !important; font-size: 21px !important; line-height: 1.85 !important; margin-bottom: 0 !important; text-align: left !important; }
-
-  /* Tree Diagram specific styling */
-  .tree-list { list-style-type: none; padding-left: 0; margin-top: 15px; }
-  .tree-item { margin-bottom: 20px; padding: 15px 20px; background: var(--bg-darker); border-left: 4px solid var(--gold); }
-  .tree-sub { padding-left: 20px; list-style-type: square; margin-top: 10px; color: var(--text-mid); }
-  .tree-sub li { margin-bottom: 8px; font-size: 20px; font-family: 'EB Garamond', serif; }
 
   em { font-style: italic; }
   strong { font-weight: 700; }
@@ -392,8 +380,6 @@
 <body>
 <div id="app">
 
-<div class="invocation-bar">All glories to Lord Nityananda</div>
-
 <header class="site-header">
   <div class="header-inner">
     <div class="header-om">Om</div>
@@ -439,7 +425,7 @@
       <div class="chapter-num-label" id="chapterNum"></div>
       <div class="chapter-main-title" id="chapterTitle"></div>
       <div class="chapter-sb-ref" id="chapterRef"></div>
-      <a class="vedabase-link" id="chapterVedabaseLink" href="#" target="_blank" rel="noopener noreferrer">&#128214;&nbsp; Read the original text on Vedabase &rarr;</a>
+      <a class="vedabase-link" id="chapterVedabaseLink" href="#" target="_blank" rel="noopener noreferrer">Read the original verses &amp; Srila Prabhupada's purports on Vedabase &nbsp;&rarr;</a>
     </div>
     <div class="chapter-ornament">* * *</div>
     <div id="sectionsContainer"></div>
@@ -488,12 +474,209 @@
 </div>
 <script>
 
+const sapContent = {
+  1: {
+    0: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">You are not a random being in a random universe</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>The very first verse of the Bhagavatam establishes the complete map of existence in a single sentence. The Supreme Absolute Truth &mdash; from whom creation, maintenance and annihilation proceed &mdash; is self-luminous, fully cognizant, and imparted Vedic knowledge directly into the heart of Brahma at the beginning of creation.</p>
+    <p>You are a conscious soul in a creation that flows from a conscious Source &mdash; and that Source is not distant or indifferent. <strong>He is the origin of all knowing. Your own capacity to understand flows from Him.</strong> This is the relationship the Bhagavatam begins by establishing. Everything else follows from it.</p>
+    <div class="sap-key-insight"><p>The Source imparted knowledge into the heart of the first created being. He still imparts it into every heart that turns toward Him with sincerity.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Bow before you begin</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>The verse opens with <em>om namo bhagavate vasudevaya</em> &mdash; the salutation that is both practice and doorway. The physical act of bowing &mdash; namah &mdash; is not merely ceremonial. It is the practice of lowering the ego sufficiently to allow something larger to enter. Before you can receive the Bhagavatam, you must create the space to receive it. That space is made by bowing.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Before reading a single verse today, chant <em>om namo bhagavate vasudevaya</em> three times. Not as a formality. As a genuine act of lowering &mdash; of saying: I do not already know what this text will show me. I come empty. I come open.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Resting in the source</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit the first verse promises is <em>satyam param dhimahi</em> &mdash; meditation upon the Supreme Absolute Truth. Not information about it. Not arguments for it. Meditation upon it. The fruit of this entire Bhagavatam is not more knowledge. It is a different quality of being. A being that rests in the Absolute Truth the way a river rests in the ocean. Not striving. Not grasping. Simply present in the source from which it came.</p>
+  </div>
+</div>`,
+    1: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">You are not reading about the Lord — you are in His presence</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>These verses establish the Bhagavatam's identity &mdash; it is the literary incarnation of the Lord, the ripened fruit of the wish-fulfilling tree of Vedic literature. The Bhagavatam is understood in the Vaishnava tradition as a living presence &mdash; as genuinely the Lord in the form of sound.</p>
+    <p>The relationship this section establishes is between the reader and the text itself. <strong>You are not reading about the Lord. You are in the presence of the Lord.</strong> Every verse you read with genuine attention is a direct encounter &mdash; not a description of an encounter. The text and the person it describes are non-different.</p>
+    <div class="sap-key-insight"><p>The Bhagavatam calls itself the ripened fruit &mdash; sweet, ready, needing no further preparation. It is already complete. The only question is whether you are ready to taste it.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Taste, do not analyze</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>The Bhagavatam describes itself as a ripened fruit that has fallen from the tree &mdash; sweet, ready to be tasted, needing no further cooking or preparation. Most of us approach a text by trying to extract meaning from it &mdash; we work at it, we analyze, we cross-reference. This text asks for something different. It asks to be tasted.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Read one verse today as if tasting something sweet. Not examining the chemistry of sweetness. Simply tasting. Let the words enter without immediately reaching for their meaning. Give the verse thirty seconds of simple presence before the analysis begins.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Attraction that grows rather than diminishes</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit is described as something that enlivens even the liberated soul. Even Sukadeva Gosvami &mdash; already free from all material desire &mdash; was drawn to the Bhagavatam. The fruit of this text is not liberation from something. It is <em>attraction toward</em> something. And that attraction grows rather than diminishes with time. This is how you know genuine spiritual nourishment from its substitute &mdash; genuine nourishment increases your hunger for the source rather than satisfying it with a lesser substitute.</p>
+  </div>
+</div>`,
+    2: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">You are held by a living chain of souls</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>This section establishes the chain of transmission &mdash; Krsna to Brahma, Brahma to Narada, Narada to Vyasadeva, Vyasadeva to Sukadeva, Sukadeva to the assembled sages through Suta Gosvami. This chain is not administrative. It is the living nervous system through which the knowledge moves.</p>
+    <p>The relationship here is the relationship of parampara &mdash; the disciplic succession. <strong>You are not receiving this knowledge from a book. You are receiving it from a living chain of souls who received it before you.</strong> The quality of your reception depends in part on your awareness of that chain &mdash; your gratitude toward it, your reverence for it, your sense of being held by it.</p>
+    <div class="sap-key-insight"><p>Suta Gosvami does not say &mdash; I have understood this. He says &mdash; I have received this. The posture of reception is the foundation of all genuine learning.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Study through relationship, not in isolation</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>Suta Gosvami says of himself &mdash; I have received this knowledge from Sukadeva Gosvami. He does not say &mdash; I have studied this, I have analyzed this, I have understood this on my own. He says &mdash; <em>I received this.</em> The practice this section points toward is reception through relationship.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Before you study today, bring to mind your spiritual master &mdash; the teacher through whom this knowledge is most alive for you. Acknowledge that what you are about to receive came through them, and through the chain behind them, all the way back to Krsna. Let that acknowledgment change the quality of your reading.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Love as a conductor of knowledge</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit of studying in the context of parampara is that the knowledge carries a charge it cannot carry when received in isolation. The same verse read in the context of a living relationship with a teacher produces a different quality of understanding than the same verse read alone as a scholarly exercise. This is not mysticism. It is the simple truth that <em>love is a conductor.</em> Knowledge passes more freely through love than through intellect alone.</p>
+  </div>
+</div>`,
+    3: `<div class="sap-block">
+  <div class="sap-block-header">
+    <span class="sap-pill">Sambandha</span>
+    <div class="sap-block-title">
+      <span class="sap-concept">The Relationship</span>
+      <span class="sap-tagline">The right question contains its own answer</span>
+    </div>
+  </div>
+  <div class="sap-block-body">
+    <p>The sages ask the most important question ever asked &mdash; what is the highest good for all people in all circumstances, especially at the moment of death? This question establishes the relationship between every human being and their own mortality. The sages are not asking this academically. They are asking it as people who know that time is limited and that the quality of their understanding will determine the quality of their leaving.</p>
+    <p>The relationship this section reveals is the relationship between the soul and death &mdash; and the Bhagavatam's consistent answer that <strong>death is not the enemy of a life well lived. It is its culmination.</strong> The entire text that follows is the answer to this one question asked by these sages on this afternoon in a forest.</p>
+    <div class="sap-key-insight"><p>You are one of those sages. The question they asked is your question. The answer being given is your answer. The forest of Naimisharanya is wherever you are reading this.</p></div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header abhideya">
+    <span class="sap-pill abhideya">Abhideya</span>
+    <div class="sap-block-title">
+      <span class="sap-concept abhideya">The Practice</span>
+      <span class="sap-tagline">Create the conditions for genuine reception</span>
+    </div>
+  </div>
+  <div class="sap-block-body abhideya">
+    <p>The sages chose Naimisharanya deliberately &mdash; an auspicious place, an auspicious time, the right teacher, the right question. They created the conditions for genuine reception. The practice here is intentionality. Not perfect conditions &mdash; Pariksit received the entire Bhagavatam under a death sentence on the banks of a river. But <em>intentional</em> conditions.</p>
+    <div class="sap-practice">
+      <div class="sap-practice-label">&#9670; Today's Practice</div>
+      <p>Before you begin study today, ask yourself &mdash; am I creating the conditions for genuine reception? A specific time. A specific place. A specific intention. The act of choosing to study &mdash; at this time, in this place, with this question &mdash; is itself a form of the sages' bow.</p>
+    </div>
+  </div>
+</div>
+<div class="sap-block">
+  <div class="sap-block-header prayojana">
+    <span class="sap-pill prayojana">Prayojana</span>
+    <div class="sap-block-title">
+      <span class="sap-concept prayojana">The Fruit</span>
+      <span class="sap-tagline">Genuine inquiry produces genuine wisdom</span>
+    </div>
+  </div>
+  <div class="sap-block-body prayojana">
+    <p>The fruit of asking the right question is the right answer. The sages' question &mdash; what is the highest good for all people in all circumstances &mdash; receives in the chapters that follow one of the most complete answers in the history of human thought. But the answer only arrives because the question was asked with complete sincerity, in the right setting, to the right person. <em>Genuine inquiry produces genuine wisdom. And genuine wisdom, the Bhagavatam says, enlivens all the distressed souls of the universe &mdash; beginning with you.</em></p>
+  </div>
+</div>`
+  }
+};
+
+const archContent = `
+  <div style="background:var(--bg-darker);border-left:4px solid var(--maroon);padding:20px 24px;margin-bottom:28px;font-size:19px;line-height:1.85;color:var(--text-mid);font-style:italic;">
+    Canto 1 appears at first to jump from one topic to something entirely unrelated &mdash; from cosmic philosophy to a battlefield, from a wandering sage to a dying king. But nothing is accidental. Every chapter is a stone placed precisely where it must be. Once you see the architecture, the whole of Canto 1 reveals itself as one of the most elegantly constructed narratives in all of literature.
+  </div>
+
+  <div class="section-block">
+    <div class="section-header" style="cursor:default;">
+      <div class="section-num">Section 1</div>
+      <div class="section-name">The Overall Design &mdash; Two Preludes</div>
+      <div class="section-texts">Chapters 1 through 19</div>
+    </div>
+    <div class="section-body" style="display:block;">
+      <p>The Bhagavatam describes Canto 1 as having two distinct movements &mdash; two Preludes. Each is organized around questions and answers. Together they build the foundation upon which all twelve Cantos rest.</p>
+      <p class="sub-heading">Prelude Part A &mdash; Chapters 1 to 3</p>
+      <p>Chapter 1 establishes six questions from the sages. Chapters 2 and 3 answer them systematically. What is the highest good? &mdash; Bhakti. What is the essence of all scriptures? &mdash; Devotional service. What are the lila avatars? &mdash; All 22 incarnations in Chapter 3. Where did dharma go after Krsna left? &mdash; The Bhagavatam itself is where dharma took shelter. Chapters 1 to 3 are one complete unit. Question &mdash; answer. Question &mdash; answer. Clean, complete and self-contained.</p>
+      <p class="sub-heading">Prelude Part B &mdash; Chapters 4 to 19</p>
+      <p>In Chapter 4 the sages ask four entirely new questions. These drive the entire rest of Canto 1 all the way to Chapter 19. <strong>Question 1</strong> &mdash; Why was the Bhagavatam compiled? This takes six chapters to answer &mdash; Chapters 4 through the opening of Chapter 7. <strong>Question 2</strong> &mdash; What are the birth and activities of Pariksit? This takes Chapters 7 through 17 to answer. <strong>Questions 3 and 4</strong> &mdash; Why did Pariksit sit on the Ganges, and how did he meet Sukadeva? &mdash; Chapters 18 and 19. And with Sukadeva's arrival and Pariksit's question at the very end of Chapter 19 &mdash; <strong>the Bhagavatam proper begins. Canto 2 starts.</strong></p>
+      <p class="sub-heading">The Deeper Thread</p>
+      <p>What looks like a shift from philosophy to narrative is the Bhagavatam moving from <em>why</em> to <em>how</em>. First it tells you why bhakti is the answer. Then it shows you bhakti in action &mdash; in Kunti's prayers, in Draupadi's mercy, in Arjuna's surrender, in Bhishma's meditation at the moment of death. The philosophy becomes embodied in the story. There is also a zoom structure &mdash; from the most vast and cosmic scale down to one frightened woman running toward a chariot, down to one king sitting in grief on the Ganges bank. <em>The Bhagavatam keeps zooming in. From the cosmic to the personal. From the universal to the intimate. Because that is the direction of bhakti &mdash; always moving toward the specific and beloved.</em></p>
+    </div>
+  </div>
+`;
+
 function mkVerses(canto, chap, from, to) {
   var arr = [];
   for (var n = from; n <= to; n++) arr.push({ v: canto + '.' + chap + '.' + n });
   return arr;
 }
 
+// Per-verse study notes. Add entries here as they are written.
 var verseData = {
   "1.1.1": {
     keyPoints: [
@@ -508,155 +691,37 @@ var verseData = {
 
 const canto1Chapters = [
   {
-    num: "Pref", title: "Dedication & Preface", available: true,
-    vedabaseUrl: "https://vedabase.io/en/library/sb/1/preface/",
-    sections: [
-      { title: "Dedication & Pa\u00f1c\u0101\u1e45ga-ny\u0101ya", texts: "The Offering", vedabaseUrl: "https://vedabase.io/en/library/sb/1/dedication/", gist: "The offering to the spiritual master and the five-step logic of presentation.", content: `
-        <div class="quote-block"><p>To Śrīla Prabhupāda Bhaktisiddhānta Sarasvatī Gosvāmī Mahārāja<br>My Spiritual Master<br>On the 26th Annual Ceremony of His Appearance Day</p></div>
-        <p>Before beginning, the structure of presentation follows the <strong>Pañcāṅga-nyāya</strong> &mdash; the five-step logic:</p>
-        <ul class="tree-list">
-          <li class="tree-item"><strong>1. Pratijna:</strong> One can tell what the point is.</li>
-          <li class="tree-item"><strong>2. Hetu:</strong> One can explain about his point.</li>
-          <li class="tree-item"><strong>3. Udaharana:</strong> One can give examples or analogies.</li>
-          <li class="tree-item"><strong>4. Upanaya:</strong> Absorb the opposition in his point.</li>
-          <li class="tree-item"><strong>5. Nigamana:</strong> One can bring it to a conclusion supported by the Vedas which anyone can practically use.</li>
-        </ul>
-        <div class="sit-with-this" id="sit-pref-1">
-          <div class="sit-title" onclick="toggleSit('sit-pref-1')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>Notice the profound gratitude of the dedication. Before offering knowledge to the world, the author offers everything he has to his spiritual master. This posture of reception and offering is the foundation of all genuine Vedic learning.</p>
-          </div>
-        </div>
-      `},
-      { title: "The Present Need of Human Society", texts: "Preface", vedabaseUrl: "https://vedabase.io/en/library/sb/1/preface/", gist: "The Bhāgavatam is the cultural presentation needed to unite a globalized, economically developed, yet spiritually fractured human society.", content: `
-        <p>Human society is no longer bounded by geographical limits to particular countries or communities. The world tendency is toward one state or one human society. The ideals of <strong>spiritual communism</strong>, according to Śrīmad-Bhāgavatam, are based on the oneness of the entire human society, nay, of the entire energy of living beings.</p>
-        <p>Human society is not in the darkness of oblivion. It has made rapid progress in the fields of material comforts, education and economic development. <strong>But there is a pinprick somewhere in the social body at large</strong>, and therefore there are large-scale quarrels, even over less important issues. There is a need of a clue as to how humanity can become one in peace, friendship and prosperity with a common cause.</p>
-        <p>Śrīmad-Bhāgavatam will fill this need, for it is a cultural presentation for the respiritualization of the entire human society.</p>
-      `},
-      { title: "A Cultural Presentation", texts: "Preface", vedabaseUrl: "https://vedabase.io/en/library/sb/1/preface/", gist: "The root of all disparity is a godless civilization; the remedy is introducing this transcendental science even in schools and colleges.", content: `
-        <p>Śrīmad-Bhāgavatam should be introduced in schools and colleges, as recommended by the great student-devotee Prahlāda Mahārāja in order to change the demoniac face of society.</p>
-        <div class="quote-block"><p>kaumāra ācaret prājño, dharmān bhāgavatān iha<br>durlabhaṁ mānuṣaṁ janma, tad apy adhruvam artha-dam</p></div>
-        <p>Disparity in human society is due to lack of principles in a godless civilization. There is God, or the Almighty One, from whom everything emanates, by whom everything is maintained and in whom everything is merged to rest. Material science has tried to find the ultimate source of creation very insufficiently, but it is a fact that there is one ultimate source of everything that be. This ultimate source is explained rationally and authoritatively in the beautiful Bhāgavatam.</p>
-      `},
-      { title: "How to Approach This Book", texts: "Preface", vedabaseUrl: "https://vedabase.io/en/library/sb/1/preface/", gist: "The only qualification needed to study this great book is to proceed step by step cautiously and not jump forward haphazardly.", content: `
-        <p>Śrīmad-Bhāgavatam is the transcendental science not only for knowing the ultimate source of everything but also for knowing our relationship with Him and our duty toward perfection of the human society on the basis of this perfect knowledge.</p>
-        <p class="sub-heading">Proceed Cautiously</p>
-        <p>The only qualification one needs to study this great book of transcendental knowledge is to <strong>proceed step by step cautiously and not jump forward haphazardly</strong> as with an ordinary book. It should be gone through chapter by chapter, one after another. One will be unable to capture the effects of the Tenth Canto without going through the first nine cantos.</p>
-        <p class="sub-heading">The Promise</p>
-        <p>The author concludes with a hope for its good reception by the thinkers and leaders of society, quoting Śrīmad-Bhāgavatam 1.5.11:</p>
-        <div class="quote-block"><p>On the other hand, that literature which is full of descriptions of the transcendental glories of the name, fame, form and pastimes of the unlimited Supreme Lord is a transcendental creation meant for bringing about a revolution in the impious life of a misdirected civilization. Such transcendental literature, even though irregularly composed, is heard, sung and accepted by purified men who are thoroughly honest.</p></div>
-        <div class="sit-with-this" id="sit-pref-4">
-          <div class="sit-title" onclick="toggleSit('sit-pref-4')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>We are asked not to jump ahead to the intimate pastimes of the Tenth Canto, but to read step by step. Are you willing to take the time to build the philosophical and devotional foundation that these early Cantos provide?</p>
-          </div>
-        </div>
-      `}
-    ]
-  },
-  {
-    num: "Intro", title: "Introduction", available: true,
-    vedabaseUrl: "https://vedabase.io/en/library/sb/1/introduction/",
-    sections: [
-      { title: "Absolute Truth vs. God", texts: "Introduction", vedabaseUrl: "https://vedabase.io/en/library/sb/1/introduction/", gist: "The conception of God indicates a controller, whereas the Absolute Truth indicates the ultimate source of all energies.", content: `
-        <p>The conception of God and the conception of Absolute Truth are not on the same level. The Śrīmad-Bhāgavatam hits on the target of the Absolute Truth.</p>
-        <p>The conception of God indicates the controller, whereas the conception of the Absolute Truth indicates the summum bonum or the ultimate source of all energies. Because there are different controllers for different managerial positions, there may be many small gods. According to the Bhagavad-gītā any controller who has some specific extraordinary power is called a <em>vibhūtimat sattva</em>, or controller empowered by the Lord.</p>
-        <p>There are many vibhūtimat sattvas, controllers or gods with various specific powers, but the Absolute Truth is one without a second. This Śrīmad-Bhāgavatam designates the Absolute Truth or the summum bonum as the <strong>paraṁ satyam</strong>.</p>
-      `},
-      { title: "The Energies of the Lord", texts: "Introduction", vedabaseUrl: "https://vedabase.io/en/library/sb/1/introduction/", gist: "The five topics of Bhagavad-gītā map out the Lord's Superior and Inferior energies.", content: `
-        <p>To understand the Absolute Truth, we must understand the Five Topics of the Bhagavad Gītā:</p>
-        <ul style="list-style-type: square; padding-left: 20px; font-size: 20px; font-family: 'EB Garamond', serif; color: var(--text-mid); margin-bottom: 20px;">
-          <li><strong>Īśvara</strong> (The Supreme Controller)</li>
-          <li><strong>Jīva</strong> (The Living Entity)</li>
-          <li><strong>Prakṛti</strong> (Material Nature)</li>
-          <li><strong>Kāla</strong> (Time)</li>
-          <li><strong>Karma</strong> (Action)</li>
-        </ul>
-        <p class="sub-heading">The Energies Breakdown</p>
-        <ul class="tree-list">
-          <li class="tree-item">
-            <strong>&#10022; Superior Energy:</strong>
-            <ul class="tree-sub">
-              <li><strong>Sat (Eternal):</strong> Target of the <em>Jñānī</em></li>
-              <li><strong>Cit (Full of Knowledge):</strong> Target of the <em>Yogī</em></li>
-              <li><strong>Ānanda (Full of Bliss):</strong> Target of the <em>Bhakta</em></li>
-            </ul>
-          </li>
-          <li class="tree-item">
-            <strong>&#10022; Inferior Energy:</strong>
-            <ul class="tree-sub">
-              <li><strong>Gross Body:</strong> Ether (Sound), Air (Touch), Fire (Form), Water (Taste), Earth (Smell)</li>
-              <li><strong>Subtle Body:</strong> Mind, Intelligence, False Ego</li>
-            </ul>
-          </li>
-        </ul>
-      `},
-      { title: "The Supreme Conscious Person", texts: "Introduction", vedabaseUrl: "https://vedabase.io/en/library/sb/1/introduction/", gist: "Inert matter cannot generate life; rather, the living force is the original substance, conscious of all manifestations.", content: `
-        <p>The words <em>janmādy asya</em> suggest that the source of all production, maintenance or destruction is the same supreme conscious person. Even in our present experience we can know that nothing is generated from inert matter, but inert matter can be generated from the living entity.</p>
-        <p>The living force is called Brahman, and one of the greatest ācāryas (teachers), namely <strong>Śrīpāda Śaṅkarācārya</strong>, has preached that Brahman is substance whereas the cosmic world is category. The original source of all energies is the living force, and He is logically accepted as the Supreme Person.</p>
-        <p>An imperfect living being does not even know what is happening within his own personal body. He eats his food but does not know how this food is transformed into energy or how it sustains his body. But when a living being is perfect, he is aware of everything that happens, and since the Supreme Person is all-perfect, it is quite natural that He knows everything in all detail. Consequently, the perfect personality is addressed in the Śrīmad-Bhāgavatam as <strong>Vāsudeva</strong>.</p>
-      `},
-      { title: "The Person Bhāgavatam", texts: "Introduction", vedabaseUrl: "https://vedabase.io/en/library/sb/1/introduction/", gist: "Lord Śrī Caitanya Mahāprabhu preached the Śrīmad-Bhāgavatam by practical demonstration, making it easier for suffering humanity to penetrate its topics.", content: `
-        <p>In the modern age Lord Śrī Caitanya Mahāprabhu preached the Śrīmad-Bhāgavatam by practical demonstration. It is easier to penetrate into the topics of the Śrīmad-Bhāgavatam through the medium of Śrī Caitanya's causeless mercy.</p>
-        <p>It is imperative that one learn the Śrīmad-Bhāgavatam from the <strong>person Bhāgavatam</strong>. The person Bhāgavatam is one whose very life is Śrīmad-Bhāgavatam in practice. Since Śrī Caitanya Mahāprabhu is the Absolute Personality of Godhead, He is both Bhagavān and Bhāgavatam in person and in sound. Therefore His process of approaching the Śrīmad-Bhāgavatam is practical for all people of the world.</p>
-        <p>The Śrīmad-Bhāgavatam is the science of Kṛṣṇa. There is a need for the science of Kṛṣṇa in human society for the good of all suffering humanity of the world, and we simply request the leaders of all nations to pick up this science of Kṛṣṇa for their own good, for the good of society and for the good of all the world's people.</p>
-        <div class="sit-with-this" id="sit-intro-4">
-          <div class="sit-title" onclick="toggleSit('sit-intro-4')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>We are asked to learn from the "person Bhāgavatam" &mdash; someone whose very life is the scripture in practice. Who in your life embodies the teachings of the Bhagavatam? And how does observing their life change your understanding of the text?</p>
-          </div>
-        </div>
-      `}
-    ]
-  },
-  {
     num: 1, title: "Questions by the Sages", available: true,
-    vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/",
     verseClasses: [
       { label: "Class 1", date: "27 June 2026", range: "SB 1.1.1\u20131.1.12", lectureUrl: "", verses: mkVerses(1, 1, 1, 12) },
       { label: "Class 2", date: "4 July 2026",  range: "SB 1.1.13\u20131.1.23", lectureUrl: "", verses: mkVerses(1, 1, 13, 23) }
     ],
     sections: [
-      { title: "The Opening Prayer", texts: "Text 1", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/1/", gist: "The Bhagavatam opens by bowing to Krsna before anything else is said — Vyasadeva's invocation establishes that this entire work is itself an act of worship, not merely a text to be studied.", content: `
+      { title: "The Opening Prayer", texts: "Text 1", gist: "The Bhagavatam opens by bowing to Krsna before anything else is said — Vyasadeva's invocation establishes that this entire work is itself an act of worship, not merely a text to be studied.", content: `
         <p>The Bhagavatam does not simply begin &mdash; it <strong>bows down first</strong>. The very first verse is a prayer to Krsna. Vyasadeva, the author, offers his respectful obeisances before writing a single word. That itself is a teaching &mdash; before we receive this knowledge, we bow.</p>
         <p class="sub-heading">What does Vyasadeva say about Krsna?</p>
         <p>Krsna is the <em>cause of all causes</em> &mdash; not just the creator of this universe, but the very source behind all creation, all maintenance, and all destruction. Nothing exists independently of Him. He is directly and indirectly conscious of everything &mdash; nothing is hidden from Him. He is completely independent &mdash; there is no cause behind Him. He simply <em>is</em>.</p>
         <p>He first gave Vedic knowledge to Brahma &mdash; so even the first and greatest created being received his wisdom as a gift from Krsna. His Maya is so powerful that even great sages and demigods are bewildered by it &mdash; like mistaking a mirage for real water. And yet &mdash; Krsna Himself lives in a <em>transcendental abode</em> completely untouched by all of this. The whole creation, with all its drama, is like a dream. He is the eternal reality behind it.</p>
         <p>This single verse is like the entire Bhagavatam in seed form. Everything that follows is an expansion of what is said here.</p>
-        <div class="sit-with-this" id="sit-ch1-1">
-          <div class="sit-title" onclick="toggleSit('sit-ch1-1')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>Krsna is described as the cause behind everything &mdash; including the illusion that makes unreal things seem real. Does that land for you, or does it raise any questions?</p>
-          </div>
-        </div>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>Krsna is described as the cause behind everything &mdash; including the illusion that makes unreal things seem real. Does that land for you, or does it raise any questions?</p></div>
       `},
-      { title: "What is the Bhagavatam?", texts: "Texts 2&ndash;3", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/2/", gist: "The narrator explains what kind of book this is — the ripened fruit of the Vedic tree, meant to be tasted directly, free from the husk of ritual obligation that ordinary scripture requires.", content: `
+      { title: "What is the Bhagavatam?", texts: "Texts 2&ndash;3", gist: "The narrator explains what kind of book this is — the ripened fruit of the Vedic tree, meant to be tasted directly, free from the husk of ritual obligation that ordinary scripture requires.", content: `
         <p>Before the story even begins, Vyasadeva tells us exactly what kind of book this is &mdash; and it makes some extraordinary claims.</p>
         <p class="sub-heading">Text 2</p>
         <p>This book <strong>completely rejects</strong> all religion done for material reasons &mdash; rituals for wealth, health, heaven, good harvest. It deals only with the <em>highest truth</em> &mdash; accessible to those who are <strong>pure in heart</strong>. Not necessarily learned. Pure in heart. That highest truth uproots the <em>three miseries</em> &mdash; from our own mind and body, from other living beings, and from nature. And the most stunning claim &mdash; <strong>this book alone is sufficient for God realization.</strong> Simply by hearing it attentively and submissively, the Supreme Lord becomes established in your heart. Not through ritual. Through <em>hearing</em>.</p>
         <p class="sub-heading">Text 3</p>
         <p>The Bhagavatam is the <em>ripest fruit of the tree of Vedic knowledge</em> &mdash; the final, most mature expression of everything. It came through the lips of Sukadeva Gosvami &mdash; and because of that, it became even sweeter. Like fruit made more delicious when offered with love. It is relishable even for liberated souls &mdash; people who have already gone beyond material existence still want to hear it.</p>
-        <div class="sit-with-this" id="sit-ch1-2">
-          <div class="sit-title" onclick="toggleSit('sit-ch1-2')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>The text says the Bhagavatam works through attentive and submissive hearing &mdash; not effort, not ritual, not scholarship. Just open, humble listening. Is there any part of you reading to evaluate rather than to receive?</p>
-          </div>
-        </div>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>The text says the Bhagavatam works through attentive and submissive hearing &mdash; not effort, not ritual, not scholarship. Just open, humble listening. Is there any part of you reading to evaluate rather than to receive?</p></div>
       `},
-      { title: "The Setting & Who is Suta Gosvami", texts: "Texts 4&ndash;8", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/4/", gist: "The scene is set at Naimisharanya, where the sages assemble around Suta Gosvami, the disciple who heard the Bhagavatam from Sukadeva and now retells it to those seeking the essence of dharma in the age of Kali.", content: `
+      { title: "The Setting & Who is Suta Gosvami", texts: "Texts 4&ndash;8", gist: "The scene is set at Naimisharanya, where the sages assemble around Suta Gosvami, the disciple who heard the Bhagavatam from Sukadeva and now retells it to those seeking the essence of dharma in the age of Kali.", content: `
         <p class="sub-heading">The Place &mdash; Naimisaranya</p>
         <p>A group of great sages have gathered in the holy forest of <em>Naimisaranya</em> for a <strong>thousand-year sacrifice</strong> &mdash; not for themselves, but entirely for the pleasure of the Lord and His devotees. Into this sacred gathering walks <strong>Suta Gosvami</strong>. The sages immediately offer him an elevated seat of honor &mdash; not because of his birth, but because of what he carries inside him. <em>True honor goes to the one who carries true knowledge.</em></p>
         <p class="sub-heading">Who is Suta Gosvami?</p>
         <p><strong>Free from vice</strong> &mdash; his character is pure. Knowledge in a pure vessel stays pure. <strong>Deeply learned</strong> &mdash; trained under proper guidance in all the scriptures. He did not just read books. He learned at the feet of masters. And most importantly, <strong>submissive</strong> &mdash; because of his gentleness, his spiritual masters gave him everything. Every blessing, every realization flowed to him because he never made himself bigger than his teachers.</p>
         <p>Suta Gosvami is essentially a <em>transparent medium</em> &mdash; he received purely, and now he will give purely. This is the <strong>prampara</strong> &mdash; the chain of disciplic succession. Knowledge flows from heart to heart, teacher to student, when the student is truly humble.</p>
-        <div class="sit-with-this" id="sit-ch1-3">
-          <div class="sit-title" onclick="toggleSit('sit-ch1-3')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>The sages honored Suta Gosvami not for his birth or status but for what he carried within him and how humbly he carried it. In your own life &mdash; who do you go to for wisdom? And do you approach them with that same quality of submission?</p>
-          </div>
-        </div>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>The sages honored Suta Gosvami not for his birth or status but for what he carried within him and how humbly he carried it. In your own life &mdash; who do you go to for wisdom? And do you approach them with that same quality of submission?</p></div>
       `},
-      { title: "The Five Questions of the Sages", texts: "Texts 9&ndash;23", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/9/", gist: "The sages ask Suta five questions about the supreme good for humanity — questions whose answers will define the entire scope and purpose of the Bhagavatam that follows.", content: `
+      { title: "The Five Questions of the Sages", texts: "Texts 9&ndash;23", gist: "The sages ask Suta five questions about the supreme good for humanity — questions whose answers will define the entire scope and purpose of the Bhagavatam that follows.", content: `
         <p>The sages give context before asking. They say &mdash; look at the age we are living in. <strong>Kali Yuga.</strong> People are short-lived, quarrelsome, lazy, misguided, and constantly disturbed. There are thousands of scriptures with thousands of instructions. Nobody has the time or clarity to follow all of it. So please &mdash; <em>give us only the essence.</em></p>
         <p class="sub-heading">The Five Questions</p>
         <div class="quote-block"><p><strong>1.</strong> What is the <strong>highest good</strong> &mdash; the absolute and ultimate good for all people? <em>(Text 9)</em></p></div>
@@ -665,12 +730,7 @@ const canto1Chapters = [
         <div class="quote-block"><p><strong>4.</strong> What are <strong>His various incarnations and their pastimes</strong>, as taught by the previous acaryas? <em>(Texts 13, 17, 18)</em></p></div>
         <div class="quote-block"><p><strong>5.</strong> <strong>Now that Krsna has departed</strong>, to whom have the religious principles gone for shelter? Where does dharma reside now? <em>(Text 23)</em></p></div>
         <p>Together these five questions form a complete map. The entire Bhagavatam &mdash; all 12 Cantos &mdash; is essentially Suta Gosvami's answer to these five questions.</p>
-        <div class="sit-with-this" id="sit-ch1-4">
-          <div class="sit-title" onclick="toggleSit('sit-ch1-4')">&#10022; Sit With This</div>
-          <div class="sit-body">
-            <p>Out of these five questions &mdash; which one feels most alive and personal to you right now? Which question, if answered deeply, would most change how you live or how you practice?</p>
-          </div>
-        </div>
+        <div class="sit-with-this"><div class="sit-title">&#127 Sit With This</div><p>Out of these five questions &mdash; which one feels most alive and personal to you right now? Which question, if answered deeply, would most change how you live or how you practice?</p></div>
       `}
     ]
   }
@@ -679,14 +739,10 @@ const canto1Chapters = [
 var activeChapters = canto1Chapters;
 var activeCanto = { num: 1, name: "Creation" };
 
-function setVedabaseLink(ch) {
+function setVedabaseLink(cantoNum, chNum) {
   var el = document.getElementById('chapterVedabaseLink');
   if (!el) return;
-  if (ch.vedabaseUrl) {
-    el.href = ch.vedabaseUrl;
-  } else {
-    el.href = 'https://vedabase.io/en/library/sb/' + activeCanto.num + '/' + ch.num + '/';
-  }
+  el.href = 'https://vedabase.io/en/library/sb/' + cantoNum + '/' + chNum + '/';
   el.style.display = 'inline-block';
 }
 
@@ -698,79 +754,47 @@ function chapterMeta(ch) {
 }
 
 function renderHome() {
-  var html = '';
-  
-  if (activeCanto.num === 1) {
-    html += '<div class="chapter-divider">Preliminaries</div>';
-    html += '<div class="chapter-item architecture" onclick="openArchitecture()">' +
-            '<div class="chapter-num-col">Guide</div>' +
-            '<div class="chapter-body"><div>' +
-            '<div class="chapter-title-text">The Architecture of Canto 1</div>' +
-            '<div class="chapter-meta">How the story flows &mdash; and why</div>' +
-            '</div><div class="chapter-arrow">&#8250;</div></div></div>';
-  }
-
-  var prelims = activeChapters.filter(function(ch) { return typeof ch.num === 'string'; });
-  var chapters = activeChapters.filter(function(ch) { return typeof ch.num === 'number'; });
-
-  for (var p = 0; p < prelims.length; p++) {
-    var pCh = prelims[p];
-    var pIdx = activeChapters.indexOf(pCh);
-    html += renderChapterCard(pCh, pIdx);
-  }
-
-  if (chapters.length > 0) {
-    html += '<div class="chapter-divider" style="margin-top:20px;">Chapters</div>';
-    for (var c = 0; c < chapters.length; c++) {
-      var cCh = chapters[c];
-      var cIdx = activeChapters.indexOf(cCh);
-      html += renderChapterCard(cCh, cIdx);
-    }
-  }
-
-  document.getElementById('chapterGrid').innerHTML = html;
-}
-
-function renderChapterCard(ch, idx) {
-  var onclick = ch.available ? 'onclick="openChapter(' + idx + ')"' : '';
-  var arrow = ch.available ? '<div class="chapter-arrow">&#8250;</div>' : '';
-  var meta = ch.available ? chapterMeta(ch) : 'Coming soon';
-  return '<div class="chapter-item ' + (ch.available ? 'available' : 'coming-soon') + '" ' + onclick + '>' +
-    '<div class="chapter-num-col">' + ch.num + '</div>' +
+  var archEntry = (activeCanto.num === 1) ?
+    ('<div class="chapter-item architecture" onclick="openArchitecture()">' +
+    '<div class="chapter-num-col">Guide</div>' +
     '<div class="chapter-body"><div>' +
-    '<div class="chapter-title-text">' + ch.title + '</div>' +
-    '<div class="chapter-meta">' + meta + '</div>' +
-    '</div>' + arrow + '</div></div>';
+    '<div class="chapter-title-text">The Architecture of Canto 1</div>' +
+    '<div class="chapter-meta">How the story flows &mdash; and why</div>' +
+    '</div><div class="chapter-arrow">&#8250;</div></div></div>' +
+    '<div class="chapter-divider">Chapters</div>') : '';
+
+  document.getElementById('chapterGrid').innerHTML = archEntry + activeChapters.map(function(ch) {
+    var onclick = ch.available ? 'onclick="openChapter(' + (ch.num-1) + ')"' : '';
+    var arrow = ch.available ? '<div class="chapter-arrow">&#8250;</div>' : '';
+    var meta = ch.available ? chapterMeta(ch) : 'Coming soon';
+    return '<div class="chapter-item ' + (ch.available ? 'available' : 'coming-soon') + '" ' + onclick + '>' +
+      '<div class="chapter-num-col">' + ch.num + '</div>' +
+      '<div class="chapter-body"><div>' +
+      '<div class="chapter-title-text">' + ch.title + '</div>' +
+      '<div class="chapter-meta">' + meta + '</div>' +
+      '</div>' + arrow + '</div></div>';
+  }).join('');
 }
 
 function openChapter(idx) {
   var ch = activeChapters[idx];
   if (!ch || !ch.sections) return;
-  
-  var chNumDisplay = (typeof ch.num === 'string') ? ch.num : ('Chapter ' + ch.num);
-  
-  document.getElementById('chapterNum').textContent = 'Canto ' + activeCanto.num + ' · ' + chNumDisplay;
+  document.getElementById('chapterNum').textContent = 'Canto ' + activeCanto.num + ' · Chapter ' + ch.num;
   document.getElementById('chapterTitle').innerHTML = ch.title;
-  document.getElementById('breadcrumb-chapter').textContent = chNumDisplay;
-  document.getElementById('chapterRef').textContent = 'SB ' + activeCanto.num + (typeof ch.num === 'number' ? '.' + ch.num : '');
-  
-  setVedabaseLink(ch);
-  
+  document.getElementById('breadcrumb-chapter').textContent = 'Chapter ' + ch.num;
+  document.getElementById('chapterRef').textContent = 'SB ' + activeCanto.num + '.' + ch.num;
+  setVedabaseLink(activeCanto.num, ch.num);
   var cl = document.getElementById('chapter-canto-label');
   if (cl) cl.textContent = 'Canto ' + activeCanto.num;
-  
   saveReading(activeCanto.num, ch.num, ch.title);
-  
   var chSap = (activeCanto.num === 1) ? (sapContent[ch.num] || {}) : {};
   var html = '';
   var bmSec = -1;
   try { var bm = localStorage.getItem('sb_bm_' + activeCanto.num + '_' + ch.num); if(bm!==null) bmSec=parseInt(bm); } catch(e){}
-  
   for (var i = 0; i < ch.sections.length; i++) {
     var sec = ch.sections[i];
     var hasSap = !!chSap[i];
     var sapToggle = '';
-    
     if (hasSap) {
       sapToggle = '<div class="sap-toggle-wrap" id="sap-wrap-' + i + '">' +
         '<div class="sap-toggle-header" onclick="event.stopPropagation();toggleSap(' + i + ')">' +
@@ -781,31 +805,23 @@ function openChapter(idx) {
         '</div><span class="sap-toggle-chevron">&#9660;</span></div>' +
         '<div class="sap-toggle-body"><div class="sap-layer">' + chSap[i] + '</div></div></div>';
     }
-    
     var sapInd = hasSap ? '<span class="sap-indicator"> &nbsp;&#9670; Go Deeper</span>' : '';
-    
-    var vbLinkHtml = sec.vedabaseUrl 
-      ? '<a href="' + sec.vedabaseUrl + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="sec-vb-link">' + sec.texts + ' &rarr;</a>' 
-      : sec.texts;
-
     html += '<div class="section-block" id="sec-' + i + '">' +
       '<div class="section-header" onclick="toggleSection(' + i + ')">' +
       '<div class="section-header-left">' +
       '<div class="section-num">Section ' + (i+1) + '</div>' +
       '<div class="section-name">' + sec.title + '</div>' +
-      '<div class="section-texts">' + vbLinkHtml + sapInd + '</div>' +
+      '<div class="section-texts">' + sec.texts + sapInd + '</div>' +
       '</div>' +
       '<button class="bookmark-btn' + (i === bmSec ? ' bookmarked' : '') + '" data-sec="' + i + '" ' +
-        'onclick="event.stopPropagation();bookmarkSection(' + activeCanto.num + ',\'' + ch.num + '\',' + i + ')">' +
+        'onclick="event.stopPropagation();bookmarkSection(' + activeCanto.num + ',' + ch.num + ',' + i + ')">' +
         (i === bmSec ? '\u2665' : '\u2661') + '</button>' +
       '<div class="section-chevron">&#9660;</div></div>' +
       '<div class="section-body">' + sec.content + sapToggle + '</div></div>';
   }
-  
   if (ch.verseClasses) {
     html += '<div class="verse-divider">Verse-by-Verse Notes</div>' + renderVerseChapter(ch);
   }
-  
   document.getElementById('sectionsContainer').innerHTML = html;
   showScreen('chapter');
   window.scrollTo(0, 0);
@@ -833,8 +849,7 @@ function vpart(title, bodyHtml) {
 
 function renderVerseChapter(ch) {
   var html = '';
-  for(var gIdx=0; gIdx<ch.verseClasses.length; gIdx++) {
-    var g = ch.verseClasses[gIdx];
+  ch.verseClasses.forEach(function(g) {
     var lecture = g.lectureUrl ?
       '<a class="vclass-lecture" href="' + g.lectureUrl + '" target="_blank" rel="noopener noreferrer">&#128250;&nbsp; Watch the class lecture &rarr;</a>' :
       '<span class="vclass-lecture muted">&#128250;&nbsp; Lecture link coming soon</span>';
@@ -842,9 +857,7 @@ function renderVerseChapter(ch) {
       '<div class="vclass-left"><div class="vclass-label">' + g.label + '</div>' +
       '<div class="vclass-meta">' + g.range + ' &middot; ' + g.date + '</div></div>' +
       lecture + '</div></div>';
-      
-    for(var vIdx=0; vIdx<g.verses.length; vIdx++) {
-      var v = g.verses[vIdx];
+    g.verses.forEach(function(v) {
       var d = (typeof verseData !== 'undefined' && verseData[v.v]) ? verseData[v.v] : {};
       var vbUrl = 'https://vedabase.io/en/library/sb/' + v.v.split('.').join('/') + '/';
       var kp = (d.keyPoints && d.keyPoints.length) ?
@@ -869,8 +882,8 @@ function renderVerseChapter(ch) {
         vpart('&#9999;&nbsp; Summary of the Purport', summary) +
         vpart('&#128172;&nbsp; Points Discussed in Class', pts) +
         '</div></div>';
-    }
-  }
+    });
+  });
   return html;
 }
 
@@ -908,31 +921,24 @@ function openSavedVerse(ref) {
   openChapter(0);
   setTimeout(function() {
     var blocks = document.querySelectorAll('#sectionsContainer .verse-block');
-    for(var j=0; j<blocks.length; j++) {
-      var b = blocks[j];
+    blocks.forEach(function(b) {
       var nm = b.querySelector('.section-name');
       if (nm && nm.textContent.replace(/^SB\s*/, '') === ref) {
         b.classList.add('open');
         var y = b.getBoundingClientRect().top + window.pageYOffset - 90;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
-    }
+    });
   }, 90);
 }
 
 function toggleSection(idx) {
-  var block = document.getElementById('sec-' + idx);
-  if (!block) return;
-  var isOpen = block.classList.contains('open');
-  var allBlocks = document.querySelectorAll('.section-block');
-  for (var i = 0; i < allBlocks.length; i++) {
-    allBlocks[i].classList.remove('open');
-  }
+  const block = document.getElementById('sec-' + idx);
+  const isOpen = block.classList.contains('open');
+  document.querySelectorAll('.section-block').forEach(b => b.classList.remove('open'));
   if (!isOpen) {
     block.classList.add('open');
-    setTimeout(function() {
-      block.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 60);
+    setTimeout(() => block.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 60);
   }
 }
 
@@ -949,27 +955,23 @@ function renderIdxCantoGeneric(blockId, cantoNum, cantoName, chapters) {
     '<div class="idx-canto-right"><span class="canto-badge ' + badgeClass + '">' + badgeText + '</span>' +
     '<span class="idx-chevron">&#9660;</span></div></div>' +
     '<div class="idx-chapters chapter-list">';
-    
-  for(var i=0; i<chapters.length; i++) {
-    var ch = chapters[i];
+  chapters.forEach(function(ch) {
     var ref = ch.num;
     if (ch.available) {
-      var idxMeta = chapterMeta(ch), secsHtml = '';
+      var idxMeta = chapterMeta(ch), secsHtml;
       if (ch.sections) {
-        for(var j=0; j<ch.sections.length; j++) {
-          var s = ch.sections[j];
+        secsHtml = ch.sections.map(function(s) {
           var gistHtml = s.gist ? '<span class="idx-sec-gist">' + s.gist + '</span>' : '';
-          secsHtml += '<div class="idx-sec-row"><span class="idx-sec-dot">&#9670;</span>' +
+          return '<div class="idx-sec-row"><span class="idx-sec-dot">&#9670;</span>' +
             '<div class="idx-sec-content"><span class="idx-sec-name">' + s.title + '</span>' +
             gistHtml + '</div></div>';
-        }
+        }).join('');
       } else {
-        for(var k=0; k<ch.verseClasses.length; k++) {
-          var g = ch.verseClasses[k];
-          secsHtml += '<div class="idx-sec-row"><span class="idx-sec-dot">&#9670;</span>' +
+        secsHtml = ch.verseClasses.map(function(g) {
+          return '<div class="idx-sec-row"><span class="idx-sec-dot">&#9670;</span>' +
             '<div class="idx-sec-content"><span class="idx-sec-name">' + g.label + '</span>' +
             '<span class="idx-sec-gist">' + g.range + ' &middot; ' + g.date + '</span></div></div>';
-        }
+        }).join('');
       }
       html += '<div class="chapter-item available idx-chapter" onclick="toggleIdxChapter(this)">' +
         '<div class="chapter-num-col">' + ref + '</div>' +
@@ -986,7 +988,7 @@ function renderIdxCantoGeneric(blockId, cantoNum, cantoName, chapters) {
         '<div class="chapter-meta">Coming soon</div>' +
         '</div></div></div>';
     }
-  }
+  });
   html += '</div></div>';
   idxBlock.innerHTML = html;
 }
@@ -1003,23 +1005,16 @@ function buildSearchIndex() {
   searchIndex = [];
   var tmp = document.createElement('div');
   function strip(s) { tmp.innerHTML = s || ''; return (tmp.textContent || '').trim(); }
-  
-  var cantos = [1, 2, 3, 4];
-  for(var c=0; c<cantos.length; c++) {
-    var canto = cantos[c];
+  [1, 2, 3, 4].forEach(function(canto) {
     var chapters = getCantoChapters(canto);
-    for(var i=0; i<chapters.length; i++) {
-      var ch = chapters[i];
-      if (!ch.sections) continue;
+    chapters.forEach(function(ch) {
+      if (!ch.sections) return;
       searchIndex.push({ type: 'chapter', canto: canto, chap: ch.num, secIdx: null, title: ch.title, titleText: strip(ch.title).toLowerCase(), ref: 'SB ' + canto + '.' + ch.num });
-      if (!ch.verseClasses) {
-        for(var s=0; s<ch.sections.length; s++) {
-          var sec = ch.sections[s];
-          searchIndex.push({ type: 'section', canto: canto, chap: ch.num, secIdx: s, title: sec.title, titleText: strip(sec.title).toLowerCase(), chTitle: ch.title, ref: 'SB ' + canto + '.' + ch.num });
-        }
-      }
-    }
-  }
+      if (!ch.verseClasses) ch.sections.forEach(function(sec, i) {
+        searchIndex.push({ type: 'section', canto: canto, chap: ch.num, secIdx: i, title: sec.title, titleText: strip(sec.title).toLowerCase(), chTitle: ch.title, ref: 'SB ' + canto + '.' + ch.num });
+      });
+    });
+  });
   return searchIndex;
 }
 
@@ -1036,7 +1031,7 @@ function onSearchInput() {
   var m = q.match(/^(\d+)\s*[.\-:\s]\s*(\d+)$/);
   var mc = null, mch = null;
   if (m) {
-    mc = parseInt(m[1]); mch = isNaN(parseInt(m[2])) ? m[2] : parseInt(m[2]);
+    mc = parseInt(m[1]); mch = parseInt(m[2]);
     var chObj = getChapterObj(mc, mch);
     if (chObj && (chObj.sections || chObj.verseClasses)) {
       results.push({ type: 'chapter', canto: mc, chap: mch, secIdx: null, title: chObj.title, ref: 'SB ' + mc + '.' + mch, jump: true });
@@ -1051,13 +1046,10 @@ function onSearchInput() {
     }
   }
   if (!results.length) { box.innerHTML = '<div class="search-no-results">No matches for &ldquo;' + escapeHtml(q) + '&rdquo;</div>'; return; }
-  
-  var html = '';
-  for(var j=0; j<results.length; j++) {
-    var r = results[j];
+  box.innerHTML = results.map(function(r) {
     var kind = r.jump ? 'Jump to' : (r.type === 'chapter' ? 'Chapter' : 'Section');
-    var sub = r.type === 'section' ? ((typeof r.chap === 'number' ? 'Chapter ' : '') + r.chap + ' &middot; ' + r.chTitle) : ('Canto ' + r.canto);
-    html += '<button class="search-result" onclick="openTo(' + r.canto + ',\'' + r.chap + '\',' + (r.secIdx === null ? 'null' : r.secIdx) + ')">' +
+    var sub = r.type === 'section' ? ('Chapter ' + r.chap + ' &middot; ' + r.chTitle) : ('Canto ' + r.canto);
+    return '<button class="search-result" onclick="openTo(' + r.canto + ',' + r.chap + ',' + (r.secIdx === null ? 'null' : r.secIdx) + ')">' +
       '<div class="search-result-ref">' + r.ref + '</div>' +
       '<div class="search-result-text">' +
         '<div class="search-result-title">' + r.title + '</div>' +
@@ -1065,8 +1057,7 @@ function onSearchInput() {
       '</div>' +
       '<div class="search-result-kind">' + kind + '</div>' +
     '</button>';
-  }
-  box.innerHTML = html;
+  }).join('');
 }
 
 function onSearchKey(e) {
@@ -1080,32 +1071,18 @@ function onSearchKey(e) {
 }
 
 function updateSearchActive(items) {
-  for(var i=0; i<items.length; i++) {
-    if(i === searchActiveIdx) {
-      items[i].classList.add('active');
-      items[i].scrollIntoView({ block: 'nearest' });
-    } else {
-      items[i].classList.remove('active');
-    }
-  }
+  items.forEach(function(it, i) { it.classList.toggle('active', i === searchActiveIdx); });
+  if (searchActiveIdx >= 0) items[searchActiveIdx].scrollIntoView({ block: 'nearest' });
 }
 
 function openTo(canto, chap, secIdx) {
   var si = document.getElementById('searchInput'); if (si) si.value = '';
   var sr = document.getElementById('searchResults'); if (sr) sr.innerHTML = '';
   searchActiveIdx = -1;
-  
-  if (canto === 1) { 
-    openCanto(1); 
-    var idx = -1;
-    for(var i=0; i<activeChapters.length; i++){ if(String(activeChapters[i].num) === String(chap)) { idx=i; break; } }
-    if(idx !== -1) openChapter(idx); 
-  }
-  
+  if (canto === 1) { openCanto(1); openChapter(chap - 1); }
   if (secIdx !== null && secIdx >= 0) {
     setTimeout(function() {
-      var blocks = document.querySelectorAll('.section-block');
-      for(var j=0; j<blocks.length; j++) blocks[j].classList.remove('open');
+      document.querySelectorAll('.section-block').forEach(function(b) { b.classList.remove('open'); });
       var el = document.getElementById('sec-' + secIdx);
       if (el) { el.classList.add('open'); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     }, 90);
@@ -1119,19 +1096,17 @@ function openIndex() {
 function toggleIdxCanto(el) {
   var canto = el.closest('.idx-canto');
   if (!canto || canto.classList.contains('coming-idx-canto')) return;
-  var cantos = document.querySelectorAll('.idx-canto');
-  for(var i=0; i<cantos.length; i++) {
-    if (cantos[i] !== canto) cantos[i].classList.remove('idx-open');
-  }
+  document.querySelectorAll('.idx-canto').forEach(function(c){
+    if (c !== canto) c.classList.remove('idx-open');
+  });
   canto.classList.toggle('idx-open');
 }
 function toggleIdxChapter(el) {
   event.stopPropagation();
   var list = el.closest('.idx-chapters');
-  var chapters = list.querySelectorAll('.idx-chapter');
-  for(var i=0; i<chapters.length; i++) {
-    if (chapters[i] !== el) chapters[i].classList.remove('idx-ch-open');
-  }
+  list.querySelectorAll('.idx-chapter').forEach(function(c){
+    if (c !== el) c.classList.remove('idx-ch-open');
+  });
   el.classList.toggle('idx-ch-open');
 }
 
@@ -1141,6 +1116,7 @@ function bookmarkSection(cantoNum, chapterNum, secIdx) {
   try {
     var key = 'sb_bm_' + cantoNum + '_' + chapterNum;
     var current = localStorage.getItem(key);
+    // Toggle off if same section tapped again
     if (current !== null && parseInt(current) === secIdx) {
       localStorage.removeItem(key);
       updateBookmarkIcons(cantoNum, chapterNum, -1);
@@ -1153,17 +1129,16 @@ function bookmarkSection(cantoNum, chapterNum, secIdx) {
 
 function updateBookmarkIcons(cantoNum, chapterNum, activeIdx) {
   var btns = document.querySelectorAll('.bookmark-btn');
-  for(var i=0; i<btns.length; i++) {
-    var btn = btns[i];
+  btns.forEach(function(btn) {
     var idx = parseInt(btn.getAttribute('data-sec'));
     if (idx === activeIdx) {
       btn.classList.add('bookmarked');
-      btn.textContent = '\u2665'; 
+      btn.textContent = '\u2665'; // filled heart/bookmark
     } else {
       btn.classList.remove('bookmarked');
-      btn.textContent = '\u2661'; 
+      btn.textContent = '\u2661'; // empty
     }
-  }
+  });
 }
 
 function restoreBookmark(cantoNum, chapterNum) {
@@ -1195,15 +1170,11 @@ function saveReading(cantoNum, chapterNum, chapterTitle) {
 function continueReading() {
   try {
     var canto = parseInt(localStorage.getItem('sb_last_canto'));
-    var chapter = localStorage.getItem('sb_last_chapter');
-    var chNum = isNaN(parseInt(chapter)) ? chapter : parseInt(chapter);
-    
+    var chapter = parseInt(localStorage.getItem('sb_last_chapter'));
     if (!canto || !chapter) return;
     if (canto === 1) {
       openCanto(1);
-      var idx = -1;
-      for(var i=0; i<activeChapters.length; i++){ if(String(activeChapters[i].num) === String(chNum)) { idx=i; break; } }
-      if(idx !== -1) openChapter(idx);
+      openChapter(chapter - 1);
     }
   } catch(e) {}
 }
@@ -1213,10 +1184,9 @@ function loadContinueBanner() {
     var canto = localStorage.getItem('sb_last_canto');
     var chapter = localStorage.getItem('sb_last_chapter');
     var title = localStorage.getItem('sb_last_title');
-    var chDisplay = isNaN(parseInt(chapter)) ? chapter : ('Chapter ' + chapter);
     if (canto && chapter && title) {
       document.getElementById('continue-text').textContent =
-        'SB Canto ' + canto + ' · ' + chDisplay + ' · ' + title;
+        'SB ' + canto + '.' + chapter + ' · ' + title;
       document.getElementById('continue-banner').style.display = 'block';
     }
   } catch(e) {}
@@ -1236,15 +1206,12 @@ function openCanto(num) {
 
 
 function showScreen(id) {
-  var screens = document.querySelectorAll('.screen');
-  for(var i=0; i<screens.length; i++) {
-    screens[i].classList.remove('active');
-  }
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
 function toggleSit(id) {
-  var el = document.getElementById(id);
+  const el = document.getElementById(id);
   if (el) el.classList.toggle('open');
 }
 
@@ -1262,7 +1229,7 @@ function openArchitecture() {
 
 function getChapterObj(canto, num) {
   var arr = getCantoChapters(canto);
-  for (var i = 0; i < arr.length; i++) { if (String(arr[i].num) === String(num)) return arr[i]; }
+  for (var i = 0; i < arr.length; i++) { if (arr[i].num === num) return arr[i]; }
   return null;
 }
 
@@ -1276,17 +1243,16 @@ function showSaved() {
         var us = rest.indexOf('_');
         if (us < 0) continue;
         var canto = parseInt(rest.substring(0, us));
-        var chapStr = rest.substring(us + 1);
-        var chap = isNaN(parseInt(chapStr)) ? chapStr : parseInt(chapStr);
+        var chap = parseInt(rest.substring(us + 1));
         var secIdx = parseInt(localStorage.getItem(k));
-        if (isNaN(canto) || isNaN(secIdx)) continue;
+        if (isNaN(canto) || isNaN(chap) || isNaN(secIdx)) continue;
         var chObj = getChapterObj(canto, chap);
         if (!chObj || !chObj.sections || !chObj.sections[secIdx]) continue;
         items.push({ canto: canto, chap: chap, secIdx: secIdx, chTitle: chObj.title, secTitle: chObj.sections[secIdx].title });
       }
     }
   } catch(e) {}
-  
+  items.sort(function(a, b) { return a.canto - b.canto || a.chap - b.chap; });
   var list = document.getElementById('savedList');
   var savedVerses = getSavedVerses().slice().sort(function(a, b) {
     var pa = a.split('.').map(Number), pb = b.split('.').map(Number);
@@ -1299,8 +1265,7 @@ function showSaved() {
     var html = '';
     if (savedVerses.length) {
       html += '<div class="saved-canto-label">Saved Verses</div>';
-      for(var k=0; k<savedVerses.length; k++) {
-        var ref = savedVerses[k];
+      savedVerses.forEach(function(ref) {
         var parts = ref.split('.');
         var chObj = getChapterObj(parseInt(parts[0]), parseInt(parts[1]));
         var chTitle = chObj ? chObj.title : '';
@@ -1312,23 +1277,22 @@ function showSaved() {
           '</div>' +
           '<button class="saved-item-remove" title="Remove from saved" onclick="event.stopPropagation();removeSavedVerse(\'' + ref + '\')">&#9829;</button>' +
           '</div>';
-      }
+      });
     }
     var lastCanto = null;
     for (var j = 0; j < items.length; j++) {
       var it = items[j];
-      var chDisplay = (typeof it.chap === 'string') ? it.chap : ('Chapter ' + it.chap);
       if (it.canto !== lastCanto) {
         html += '<div class="saved-canto-label">Saved Sections &middot; Canto ' + it.canto + '</div>';
         lastCanto = it.canto;
       }
-      html += '<div class="saved-item" onclick="openSavedItem(' + it.canto + ',\'' + it.chap + '\')">' +
-        '<div class="saved-item-ref">SB ' + it.canto + (typeof it.chap === 'number' ? ('.' + it.chap) : '') + '</div>' +
+      html += '<div class="saved-item" onclick="openSavedItem(' + it.canto + ',' + it.chap + ')">' +
+        '<div class="saved-item-ref">SB ' + it.canto + '.' + it.chap + '</div>' +
         '<div class="saved-item-text">' +
           '<div class="saved-item-section">' + it.secTitle + '</div>' +
-          '<div class="saved-item-chapter">' + chDisplay + ' &middot; ' + it.chTitle + '</div>' +
+          '<div class="saved-item-chapter">Chapter ' + it.chap + ' &middot; ' + it.chTitle + '</div>' +
         '</div>' +
-        '<button class="saved-item-remove" title="Remove from saved" onclick="event.stopPropagation();removeSaved(' + it.canto + ',\'' + it.chap + '\')">&#9829;</button>' +
+        '<button class="saved-item-remove" title="Remove from saved" onclick="event.stopPropagation();removeSaved(' + it.canto + ',' + it.chap + ')">&#9829;</button>' +
         '</div>';
     }
     list.innerHTML = html;
@@ -1337,11 +1301,8 @@ function showSaved() {
   window.scrollTo(0, 0);
 }
 
-function openSavedItem(canto, chap) {
-  openCanto(1);
-  var idx = -1;
-  for(var i=0; i<activeChapters.length; i++){ if(String(activeChapters[i].num) === String(chap)) { idx=i; break; } }
-  if(idx !== -1) openChapter(idx);
+function openSavedItem(canto, num) {
+  openCanto(1); openChapter(num - 1);
 }
 
 function removeSaved(canto, num) {
@@ -1353,10 +1314,8 @@ function getCantoChapters(canto) {
   return canto1Chapters;
 }
 
-function goToChapter(canto, numStr) {
-  var idx = -1;
-  for(var i=0; i<activeChapters.length; i++){ if(String(activeChapters[i].num) === String(numStr)) { idx=i; break; } }
-  if(idx !== -1) openChapter(idx);
+function goToChapter(canto, num) {
+  openChapter(num - 1);
 }
 
 var chapterNavState = { canto: null, prevNum: null, nextNum: null };
@@ -1366,24 +1325,22 @@ function renderChapterNav(canto, num) {
   if (!nav) return;
   var chapters = getCantoChapters(canto);
   var idx = -1;
-  for (var i = 0; i < chapters.length; i++) { if (String(chapters[i].num) === String(num)) { idx = i; break; } }
+  for (var i = 0; i < chapters.length; i++) { if (chapters[i].num === num) { idx = i; break; } }
   var prev = null, next = null;
   for (var p = idx - 1; p >= 0; p--) { if (chapters[p].sections) { prev = chapters[p]; break; } }
   for (var n = idx + 1; n < chapters.length; n++) { if (chapters[n].sections) { next = chapters[n]; break; } }
   chapterNavState = { canto: canto, prevNum: prev ? prev.num : null, nextNum: next ? next.num : null };
-  
   function card(ch, dir) {
     if (ch) {
-      var label = dir === 'prev' ? '&#8249;&nbsp; Previous' : 'Next &nbsp;&#8250;';
-      var titlePrefix = (typeof ch.num === 'string') ? '' : ('Chapter ' + ch.num + ' &middot; ');
-      return '<button class="chnav ' + dir + '" onclick="goToChapter(' + canto + ',\'' + ch.num + '\')">' +
+      var label = dir === 'prev' ? '&#8249;&nbsp; Previous Chapter' : 'Next Chapter &nbsp;&#8250;';
+      return '<button class="chnav ' + dir + '" onclick="goToChapter(' + canto + ',' + ch.num + ')">' +
         '<span class="chnav-label">' + label + '</span>' +
-        '<span class="chnav-title">' + titlePrefix + ch.title + '</span></button>';
+        '<span class="chnav-title">Chapter ' + ch.num + ' &middot; ' + ch.title + '</span></button>';
     }
     var endLabel = dir === 'prev' ? '&#8249;&nbsp; Back' : 'Back &nbsp;&#8250;';
     return '<button class="chnav ' + dir + '" onclick="goHome()">' +
       '<span class="chnav-label">' + endLabel + '</span>' +
-      '<span class="chnav-title">Home</span></button>';
+      '<span class="chnav-title">All Chapters</span></button>';
   }
   nav.innerHTML = card(prev, 'prev') + card(next, 'next');
 }
