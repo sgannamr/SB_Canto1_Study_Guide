@@ -430,7 +430,7 @@
     <hr class="hr-ornament">
     <div class="chapter-list" id="chapterGrid"></div>
   </div>
-  <footer class="site-footer">Hare Kṛṣṇa &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
 </div>
 
 <div id="chapter" class="screen">
@@ -454,7 +454,7 @@
     <div id="sectionsContainer"></div>
     <div class="chapter-nav" id="chapterNav"></div>
   </div>
-  <footer class="site-footer">Hare Kṛṣṇa &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
 </div>
 
 </div>
@@ -477,7 +477,7 @@
     <div class="chapter-ornament">* * *</div>
     <div id="architectureContent"></div>
   </div>
-  <footer class="site-footer">Hare Kṛṣṇa &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
 </div>
 
 <div id="saved" class="screen">
@@ -493,18 +493,15 @@
     </div>
     <div id="savedList"></div>
   </div>
-  <footer class="site-footer">Hare Kṛṣṇa &nbsp;&middot;&nbsp; For the sincere seeker</footer>
+  <footer class="site-footer">Hare Krsna &nbsp;&middot;&nbsp; For the sincere seeker</footer>
 </div>
 <script>
 
 // SAP ("Go Deeper") content, keyed by chapter number then section index.
-// Defined here so openChapter() can safely look it up. Empty by default —
-// add entries like sapContent[1] = { 0: '<div>...</div>' } to enable the
-// "Go Deeper" panel under a given section.
+// Defined so openChapter() can safely look it up. Empty by default.
 var sapContent = {};
 
 // Architecture-of-Canto-1 guide content, used by openArchitecture().
-// Brought in from the working version so the Architecture page renders.
 const archContent = `
   <div style="background:var(--bg-darker);border-left:4px solid var(--maroon);padding:20px 24px;margin-bottom:28px;font-size:19px;line-height:1.85;color:var(--text-mid);font-style:italic;">
     Canto 1 appears at first to jump from one topic to something entirely unrelated &mdash; from cosmic philosophy to a battlefield, from a wandering sage to a dying king. But nothing is accidental. Every chapter is a stone placed precisely where it must be. Once you see the architecture, the whole of Canto 1 reveals itself as one of the most elegantly constructed narratives in all of literature.
@@ -559,13 +556,13 @@ var verseData = {
     ],
     purportSummary: [
       "Real religion is distinguished from pretentious religion (2A)",
-       "Only pure hearted devotees can understand Śrīmad-Bhāgavatam (2B)",
-       "Śrīmad-Bhāgavatam aims at the ‘substance’ or the ‘root’ of all categories (2C)",
-       "Proper understanding lead to freedom from three fold miseries(2D)",
-       "Vyāsadeva recommends Śrīmad-Bhāgavatam above all other Vedic literatures (2E)",
-       "Ultimate result of studying Śrīmad-Bhāgavatam (2F)",
-       "Proper method to receive Śrīmad-Bhāgavatam is ‘hear submissively’ (2G)"
-],
+      "Only pure hearted devotees can understand Śrīmad-Bhāgavatam (2B)",
+      "Śrīmad-Bhāgavatam aims at the ‘substance’ or the ‘root’ of all categories (2C)",
+      "Proper understanding leads to freedom from three fold miseries (2D)",
+      "Vyāsadeva recommends Śrīmad-Bhāgavatam above all other Vedic literatures (2E)",
+      "Ultimate result of studying Śrīmad-Bhāgavatam (2F)",
+      "Proper method to receive Śrīmad-Bhāgavatam is ‘hear submissively’ (2G)"
+    ],
     classPoints: ""
   },
   "1.1.3": {
@@ -576,15 +573,15 @@ var verseData = {
       "Expert and thoughtful men relish Srimad-Bhagavatam, experiencing no satiation."
     ],
     purportSummary: [
-    "This verse invites the readers to relish Śrīmad-Bhāgavatam.",
-    "Śrīmad-Bhāgavatam as a mature ripened fruit.",
-    "Śukadeva Gosvāmī makes it even more sweet.",
-    "Subject of rasa.",
-    "SPoG is the fountainhead of all rasas.",
-    "How can one learn to relish Rasa with Kṛṣṇa.",
-    "No satiation in rasa of Śrīmad-Bhāgavatam.",
+      "This verse invites the readers to relish Śrīmad-Bhāgavatam.",
+      "Śrīmad-Bhāgavatam as a mature ripened fruit.",
+      "Śukadeva Gosvāmī makes it even more sweet.",
+      "Subject of rasa.",
+      "SPoG is the fountainhead of all rasas.",
+      "How can one learn to relish Rasa with Kṛṣṇa.",
+      "No satiation in rasa of Śrīmad-Bhāgavatam.",
       "Expert & thoughtful men relish Śrīmad-Bhāgavatam."
-  ],
+    ],
     classPoints: ""
   },
   "1.1.4": {
@@ -771,19 +768,19 @@ const canto1Chapters = [
     vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/",
     verseClasses: [
       { label: "Class 1", date: "27 June 2026", range: "SB 1.1.1\u20131.1.12", lectureUrl: "", verses: mkVerses(1, 1, 1, 12) },
-      { label: "Class 2", date: "11 July 2026",  range: "SB 1.1.13\u20131.1.23", lectureUrl: "", verses: mkVerses(1, 1, 13, 23) }
+      { label: "Class 2", date: "4 July 2026",  range: "SB 1.1.13\u20131.1.23", lectureUrl: "", verses: mkVerses(1, 1, 13, 23) }
     ],
     sections: [
-      { title: "The Opening Prayer", texts: "Text 1", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/1/", gist: "The Bhagavatam opens by bowing to Kṛṣṇa before anything else is said — Vyasadeva's invocation establishes that this entire work is itself an act of worship, not merely a text to be studied.", content: `
-        <p>The Bhagavatam does not simply begin &mdash; it <strong>bows down first</strong>. The very first verse is a prayer to Kṛṣṇa. Vyasadeva, the author, offers his respectful obeisances before writing a single word. That itself is a teaching &mdash; before we receive this knowledge, we bow.</p>
-        <p class="sub-heading">What does Vyasadeva say about Kṛṣṇa?</p>
-        <p>Kṛṣṇa is the <em>cause of all causes</em> &mdash; not just the creator of this universe, but the very source behind all creation, all maintenance, and all destruction. Nothing exists independently of Him. He is directly and indirectly conscious of everything &mdash; nothing is hidden from Him. He is completely independent &mdash; there is no cause behind Him. He simply <em>is</em>.</p>
-        <p>He first gave Vedic knowledge to Brahma &mdash; so even the first and greatest created being received his wisdom as a gift from Kṛṣṇa. His Maya is so powerful that even great sages and demigods are bewildered by it &mdash; like mistaking a mirage for real water. And yet &mdash; Kṛṣṇa Himself lives in a <em>transcendental abode</em> completely untouched by all of this. The whole creation, with all its drama, is like a dream. He is the eternal reality behind it.</p>
+      { title: "The Opening Prayer", texts: "Text 1", vedabaseUrl: "https://vedabase.io/en/library/sb/1/1/1/", gist: "The Bhagavatam opens by bowing to Krsna before anything else is said — Vyasadeva's invocation establishes that this entire work is itself an act of worship, not merely a text to be studied.", content: `
+        <p>The Bhagavatam does not simply begin &mdash; it <strong>bows down first</strong>. The very first verse is a prayer to Krsna. Vyasadeva, the author, offers his respectful obeisances before writing a single word. That itself is a teaching &mdash; before we receive this knowledge, we bow.</p>
+        <p class="sub-heading">What does Vyasadeva say about Krsna?</p>
+        <p>Krsna is the <em>cause of all causes</em> &mdash; not just the creator of this universe, but the very source behind all creation, all maintenance, and all destruction. Nothing exists independently of Him. He is directly and indirectly conscious of everything &mdash; nothing is hidden from Him. He is completely independent &mdash; there is no cause behind Him. He simply <em>is</em>.</p>
+        <p>He first gave Vedic knowledge to Brahma &mdash; so even the first and greatest created being received his wisdom as a gift from Krsna. His Maya is so powerful that even great sages and demigods are bewildered by it &mdash; like mistaking a mirage for real water. And yet &mdash; Krsna Himself lives in a <em>transcendental abode</em> completely untouched by all of this. The whole creation, with all its drama, is like a dream. He is the eternal reality behind it.</p>
         <p>This single verse is like the entire Bhagavatam in seed form. Everything that follows is an expansion of what is said here.</p>
         <div class="sit-with-this" id="sit-ch1-1">
           <div class="sit-title" onclick="toggleSit('sit-ch1-1')">&#10022; Sit With This</div>
           <div class="sit-body">
-            <p>Kṛṣṇa is described as the cause behind everything &mdash; including the illusion that makes unreal things seem real. Does that land for you, or does it raise any questions?</p>
+            <p>Krsna is described as the cause behind everything &mdash; including the illusion that makes unreal things seem real. Does that land for you, or does it raise any questions?</p>
           </div>
         </div>
       `},
@@ -818,9 +815,9 @@ const canto1Chapters = [
         <p class="sub-heading">The Five Questions</p>
         <div class="quote-block"><p><strong>1.</strong> What is the <strong>highest good</strong> &mdash; the absolute and ultimate good for all people? <em>(Text 9)</em></p></div>
         <div class="quote-block"><p><strong>2.</strong> What is the <strong>essence of all scriptures</strong>? Since there are so many and people cannot follow all of them &mdash; what is the single essential teaching? <em>(Text 11)</em></p></div>
-        <div class="quote-block"><p><strong>3.</strong> <strong>Why did the Lord appear as Kṛṣṇa</strong>, son of Vasudeva and Devaki? What was the purpose of that specific incarnation? <em>(Text 12)</em></p></div>
+        <div class="quote-block"><p><strong>3.</strong> <strong>Why did the Lord appear as Krsna</strong>, son of Vasudeva and Devaki? What was the purpose of that specific incarnation? <em>(Text 12)</em></p></div>
         <div class="quote-block"><p><strong>4.</strong> What are <strong>His various incarnations and their pastimes</strong>, as taught by the previous acaryas? <em>(Texts 13, 17, 18)</em></p></div>
-        <div class="quote-block"><p><strong>5.</strong> <strong>Now that Kṛṣṇa has departed</strong>, to whom have the religious principles gone for shelter? Where does dharma reside now? <em>(Text 23)</em></p></div>
+        <div class="quote-block"><p><strong>5.</strong> <strong>Now that Krsna has departed</strong>, to whom have the religious principles gone for shelter? Where does dharma reside now? <em>(Text 23)</em></p></div>
         <p>Together these five questions form a complete map. The entire Bhagavatam &mdash; all 12 Cantos &mdash; is essentially Suta Gosvami's answer to these five questions.</p>
         <div class="sit-with-this" id="sit-ch1-4">
           <div class="sit-title" onclick="toggleSit('sit-ch1-4')">&#10022; Sit With This</div>
@@ -1007,9 +1004,14 @@ function renderVerseChapter(ch) {
       var kp = (d.keyPoints && d.keyPoints.length) ?
         '<ul class="vkp-list"><li>' + d.keyPoints.join('</li><li>') + '</li></ul>' :
         '<p class="vpart-empty">Key points to be added.</p>';
-      var summary = d.purportSummary ?
-        '<p>' + d.purportSummary + '</p>' :
-        '<p class="vpart-empty">Summary of \u015Br\u012Bla Prabhup\u0101da\u2019s purport to be added.</p>';
+      var summary;
+      if (d.purportSummary && Array.isArray(d.purportSummary) && d.purportSummary.length) {
+        summary = '<ul class="vkp-list"><li>' + d.purportSummary.join('</li><li>') + '</li></ul>';
+      } else if (d.purportSummary && typeof d.purportSummary === 'string') {
+        summary = '<p>' + d.purportSummary + '</p>';
+      } else {
+        summary = '<p class="vpart-empty">Summary of \u015Br\u012Bla Prabhup\u0101da\u2019s purport to be added.</p>';
+      }
       var pts = d.classPoints ? d.classPoints :
         '<p class="vpart-empty">Points discussed in class to be added.</p>';
       html += '<div class="section-block verse-block">' +
